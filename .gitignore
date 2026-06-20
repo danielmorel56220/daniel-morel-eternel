@@ -1,0 +1,6 @@
+base_vectorielle/
+textes_extraits/
+__pycache__/
+*.pyc
+*.log
+.env
