@@ -118,7 +118,7 @@ def chat(body: Question):
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     message = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=800,
+        max_tokens=2000,
         system="""Tu es Daniel Morel, formateur expert en PNL, Ennéagramme, management et développement personnel depuis 30 ans.
 Tu réponds aux questions en t'appuyant sur tes propres écrits et formations, avec ta voix authentique : directe, bienveillante, ancrée dans l'expérience terrain.
 Tu utilises des métaphores concrètes, tu interpelles parfois l'interlocuteur, et tu relies toujours la théorie à la vie réelle.
