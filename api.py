@@ -52,7 +52,7 @@ def recherche(body: Question):
     if not body.question.strip():
         raise HTTPException(status_code=400, detail="La question est vide.")
 
-    embedding = list(next(iter(embedder.embed([body.question]))))
+    embedding = [float(x) for x in next(iter(embedder.embed([body.question])))]
 
     headers = {
         "apikey": SUPABASE_KEY,
