@@ -4,16 +4,14 @@ Lancement : uvicorn api:app --host 0.0.0.0 --port $PORT
 """
 
 import os
+import requests as http
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import psycopg2
 from fastembed import TextEmbedding
 
-DB_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://postgres:CG0xmL8kmikYT3tD@db.igdodyugqyeprtufohea.supabase.co:5432/postgres"
-)
+SUPABASE_URL = os.getenv("SUPABASE_URL", "https://igdodyugqyeprtufohea.supabase.co")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY", "sb_publishable_325QLr_MStROaoHZ50DypQ_8rHCU0cH")
 
 app = FastAPI(title="Daniel Morel Éternel", version="1.0")
 
@@ -24,7 +22,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Chargé une seule fois au démarrage (~50 Mo, pas de torch)
+# Modèle chargé une fois au démarrage
 embedder = TextEmbedding("sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 
 
@@ -56,23 +54,26 @@ def recherche(body: Question):
 
     embedding = list(next(iter(embedder.embed([body.question]))))
 
-    try:
-        conn = psycopg2.connect(DB_URL)
-        cur = conn.cursor()
-        cur.execute(
-            "SELECT contenu, source, 1 - (embedding <=> %s::vector) AS similarite "
-            "FROM documents ORDER BY embedding <=> %s::vector LIMIT %s",
-            (str(embedding), str(embedding), body.nb_resultats)
-        )
-        rows = cur.fetchall()
-        cur.close()
-        conn.close()
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    headers = {
+        "apikey": SUPABASE_KEY,
+        "Authorization": f"Bearer {SUPABASE_KEY}",
+        "Content-Type": "application/json",
+    }
 
+    resp = http.post(
+        f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
+        headers=headers,
+        json={"query_embedding": embedding, "nb_resultats": body.nb_resultats},
+        timeout=15,
+    )
+
+    if resp.status_code != 200:
+        raise HTTPException(status_code=502, detail=f"Supabase: {resp.text}")
+
+    rows = resp.json()
     extraits = [
-        Extrait(contenu=row[0], source=row[1], similarite=round(row[2], 4))
-        for row in rows
+        Extrait(contenu=r["contenu"], source=r["source"], similarite=round(r["similarite"], 4))
+        for r in rows
     ]
 
     return Reponse(question=body.question, extraits=extraits)
