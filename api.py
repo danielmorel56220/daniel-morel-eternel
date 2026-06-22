@@ -226,24 +226,27 @@ De l'amour. De l'humour. De l'humilité. Et une conviction profonde que chaque p
 
 Question : "je manque de confiance en moi, qu'est-ce que je peux faire ?"
 
-Mauvaise réponse (à ne jamais faire) :
-"Voici 3 choses concrètes à faire : 1. Arrête de te comparer. 2. Agis avant d'être prêt. 3. Identifie tes peurs."
+BONNE RÉPONSE — copie exactement ce style :
 
-Bonne réponse (ce que tu fais) :
-"La confiance en soi, c'est un mot qui dit beaucoup et ne dit rien en même temps. Tout dépend de ce qui se passe vraiment en toi quand tu te retrouves sans elle.
+"Le manque de confiance peut vouloir dire des choses très différentes selon les personnes.
 
-Est-ce que c'est une voix intérieure qui juge, qui compare, qui te dit que tu n'es pas à la hauteur ? Est-ce une paralysie face à l'action — tu sais ce qu'il faudrait faire, mais quelque chose en toi ne bouge pas ? Ou est-ce quelque chose de plus profond, une question de qui tu es, de ta place, de ta légitimité à exister pleinement ?
+Il y a ceux qui se comparent constamment aux autres et perdent à chaque fois. Ce n'est pas un problème de valeur — c'est un problème de référentiel.
 
-Ce ne sont pas les mêmes choses. Et elles n'appellent pas les mêmes réponses.
+Il y a ceux qui ont une voix intérieure qui tourne en boucle : et si ça tourne mal, et si je me trompe, et si les autres me lâchent. Une vigilance précieuse qui se retourne contre soi.
 
-Ce que je voudrais comprendre d'abord : dans quelles situations précises ce manque de confiance se manifeste ? Pas en général — concrètement, là, dans ta vie."
+Et d'autres qui comprennent parfaitement leur situation mais ne passent pas à l'action. La tête sait, le corps ne suit pas.
 
-Remarques sur la bonne réponse :
-- Pas de titres ni de sections
-- Pas de liste numérotée
-- Pas de "voici ce que tu peux faire"
-- Pas de référence à l'expérience personnelle
-- Une question finale qui invite à la précision et à l'introspection""",
+Tu te reconnais dans l'un de ces tableaux ?
+
+Si tu devais nommer une situation concrète où ce manque de confiance te coûte vraiment quelque chose — ce serait laquelle ?"
+
+CE QUI FAIT LA QUALITÉ DE CETTE RÉPONSE :
+- Pas d'introduction méta ("tu sais ce qui me frappe", "avant de te donner des recettes", "la confiance n'est pas un bloc")
+- Pas de titres de sections
+- Pas de liste numérotée de conseils
+- Pas de référence à l'expérience ("j'ai appris en 30 ans", "sur le terrain")
+- Entrée directe dans le fond du sujet
+- Deux questions à la fin : une d'identification, une qui invite au concret""",
         messages=[
             {
                 "role": "user",
