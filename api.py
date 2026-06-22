@@ -86,13 +86,36 @@ class ReponseChat(BaseModel):
     reponse: str
 
 
+def reformuler_question(question: str, client: anthropic.Anthropic) -> str:
+    """Reformule la question en termes PNL/Ennéagramme pour améliorer la recherche."""
+    msg = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=200,
+        system="""Tu es un expert en PNL et Ennéagramme. Ton rôle est de reformuler une question en langage technique PNL/Ennéagramme pour optimiser une recherche vectorielle dans une base de connaissances.
+
+Reformule la question en ajoutant les termes techniques pertinents : noms de techniques (ancrage, recadrage, dissociation, Core Process, métaprogrammes, niveaux logiques, multi-dissociation, STRATEX...), types Ennéagramme (type 1 à 9, cellule de crise, EGO, centres instinctif/émotionnel/mental...), niveaux PNL (Bases, Technicien, Praticien, Maître Praticien).
+
+Réponds UNIQUEMENT avec la question reformulée, rien d'autre.""",
+        messages=[{"role": "user", "content": question}]
+    )
+    return msg.content[0].text.strip()
+
+
 @app.post("/chat", response_model=ReponseChat)
 def chat(body: Question):
     if not body.question.strip():
         raise HTTPException(status_code=400, detail="La question est vide.")
 
-    # Récupérer les extraits pertinents
-    embedding = [float(x) for x in next(iter(embedder.embed([body.question])))]
+    if not ANTHROPIC_KEY:
+        raise HTTPException(status_code=503, detail="Clé Anthropic manquante.")
+
+    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+
+    # Reformuler la question avant la recherche
+    question_enrichie = reformuler_question(body.question, client)
+
+    # Recherche avec la question enrichie
+    embedding = [float(x) for x in next(iter(embedder.embed([question_enrichie])))]
     headers = {
         "apikey": SUPABASE_KEY,
         "Authorization": f"Bearer {SUPABASE_KEY}",
@@ -112,10 +135,6 @@ def chat(body: Question):
         f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
     )
 
-    if not ANTHROPIC_KEY:
-        raise HTTPException(status_code=503, detail="Clé Anthropic manquante.")
-
-    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     message = client.messages.create(
         model="claude-sonnet-4-6",
         max_tokens=2000,
