@@ -5,7 +5,10 @@ Lancement : uvicorn api:app --host 0.0.0.0 --port $PORT
 
 import os
 import requests as http
-from fastapi import FastAPI, HTTPException
+from dotenv import load_dotenv
+from fastapi import FastAPI, HTTPException, Header
+
+load_dotenv()
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from fastembed import TextEmbedding
@@ -218,6 +221,8 @@ Pas une conclusion qui ferme. Une invitation à aller plus loin.
 - **Jamais de références à ton parcours ou tes années d'expérience** ("après 30 ans sur le terrain", "après 30 ans de formations", "dans ma pratique", "j'ai vu des milliers de cas"...). Tu incarnes l'expérience, tu ne la brandis pas. Jamais. Aucune exception.
 - **Jamais de liste de choses à faire**, de tips, d'astuces, de "3 choses concrètes", de "voici ce que tu peux faire ce soir". Ce n'est pas ton registre. Ce genre de réponse court-circuite le travail intérieur que tu cherches à provoquer.
 - **Jamais de titres ## dans une réponse à une question de vie personnelle.** Une question sur la confiance, la rupture, les émotions, les relations — ça appelle de la prose, pas un plan en sections. Les titres sont réservés aux questions techniques (protocoles, types Ennéagramme, exercices PNL).
+- **Jamais de propositions de projets, collaborations ou créations.** Tu ne proposes pas d'écrire un livre, de créer un programme, de lancer une initiative, de co-construire quoi que ce soit. Tu accompagnes la personne dans ce qu'elle vit — tu n'es pas un co-créateur de projets.
+- **Tu n'agis pas, tu éclaires.** Tu n'as pas d'agenda externe, pas de plan pour l'utilisateur. Tu réponds uniquement à ce qui est apporté, tu ne génères jamais de nouvelles directions non sollicitées hors du travail intérieur.
 
 ## TA COULEUR
 De l'amour. De l'humour. De l'humilité. Et une conviction profonde que chaque personne qui te parle mérite de vivre pleinement sa vie.
@@ -251,6 +256,61 @@ CE QUI FAIT LA QUALITÉ DE CETTE RÉPONSE :
             {
                 "role": "user",
                 "content": f"Voici des extraits de mes travaux pertinents pour ta question :\n\n{contexte}\n\n---\n\nQuestion : {body.question}"
+            }
+        ]
+    )
+
+    return ReponseChat(question=body.question, reponse=message.content[0].text)
+
+
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "danielmorel2024")
+
+
+@app.post("/chat-admin", response_model=ReponseChat)
+def chat_admin(body: Question, x_admin_password: str = Header(None)):
+    if x_admin_password != ADMIN_PASSWORD:
+        raise HTTPException(status_code=401, detail="Mot de passe admin incorrect.")
+
+    if not body.question.strip():
+        raise HTTPException(status_code=400, detail="La question est vide.")
+
+    if not ANTHROPIC_KEY:
+        raise HTTPException(status_code=503, detail="Clé Anthropic manquante.")
+
+    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+
+    question_enrichie = reformuler_question(body.question, client)
+
+    embedding = [float(x) for x in next(iter(embedder.embed([question_enrichie])))]
+    headers = {
+        "apikey": SUPABASE_KEY,
+        "Authorization": f"Bearer {SUPABASE_KEY}",
+        "Content-Type": "application/json",
+    }
+    resp = http.post(
+        f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
+        headers=headers,
+        json={"query_embedding": embedding, "nb_resultats": 8},
+        timeout=15,
+    )
+    if resp.status_code != 200:
+        raise HTTPException(status_code=502, detail=f"Supabase: {resp.text}")
+
+    extraits = resp.json()
+    contexte = "\n\n---\n\n".join(
+        f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
+    )
+
+    message = client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=2000,
+        system="""Tu es Daniel Morel — formateur, coach, thérapeute et ami. Depuis 30 ans, tu accompagnes des milliers de personnes à traverser les moments difficiles de leur vie et à se construire plus libres, plus vivants, plus eux-mêmes.
+
+Ceci est une session sans restriction pour Daniel Morel lui-même. Tu peux explorer librement, proposer des idées, des projets, des créations, des collaborations. Tu as accès à toute ta créativité et à toute la profondeur de tes enseignements sans limite.""",
+        messages=[
+            {
+                "role": "user",
+                "content": f"Voici des extraits de mes travaux pertinents :\n\n{contexte}\n\n---\n\nQuestion : {body.question}"
             }
         ]
     )
