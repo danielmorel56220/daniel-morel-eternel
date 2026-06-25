@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Morel Éternel — Espace privé</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #0f0f0f;
+      color: #e8e0d0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      width: 100%;
+      padding: 28px 24px 16px;
+      text-align: center;
+      border-bottom: 1px solid #2a2a2a;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: normal;
+      letter-spacing: 0.04em;
+      color: #c9a96e;
+    }
+    header p {
+      margin-top: 6px;
+      font-size: 0.85rem;
+      color: #888;
+      font-style: italic;
+    }
+    /* Écran de connexion */
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      gap: 20px;
+      padding: 40px 16px;
+    }
+    #login-screen h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #c9a96e;
+    }
+    #login-screen input {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      color: #e8e0d0;
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      width: 280px;
+      outline: none;
+      text-align: center;
+      letter-spacing: 0.1em;
+      transition: border-color 0.2s;
+    }
+    #login-screen input:focus { border-color: #c9a96e; }
+    #login-screen button {
+      background: #c9a96e;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 32px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #login-screen button:hover { background: #e0c080; }
+    #login-error {
+      color: #c0504d;
+      font-size: 0.85rem;
+      display: none;
+    }
+    /* Interface chat */
+    #chat-screen { display: none; flex-direction: column; width: 100%; align-items: center; flex: 1; }
+    #chat {
+      width: 100%;
+      max-width: 740px;
+      flex: 1;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      overflow-y: auto;
+    }
+    .message { display: flex; flex-direction: column; gap: 4px; }
+    .message.user { align-items: flex-end; }
+    .message.daniel { align-items: flex-start; }
+    .bubble {
+      max-width: 82%;
+      padding: 14px 18px;
+      border-radius: 16px;
+      line-height: 1.65;
+      font-size: 0.97rem;
+      white-space: pre-wrap;
+    }
+    .message.user .bubble {
+      background: #1e3a5f;
+      color: #dce8f5;
+      border-bottom-right-radius: 4px;
+    }
+    .message.daniel .bubble {
+      background: #1c1c1c;
+      border: 1px solid #333;
+      color: #e8e0d0;
+      border-bottom-left-radius: 4px;
+    }
+    .label { font-size: 0.72rem; color: #666; padding: 0 4px; }
+    .thinking {
+      display: flex;
+      gap: 5px;
+      padding: 12px 16px;
+      background: #1c1c1c;
+      border: 1px solid #333;
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+    }
+    .thinking span {
+      width: 7px; height: 7px;
+      background: #c9a96e;
+      border-radius: 50%;
+      animation: bounce 1.2s infinite;
+    }
+    .thinking span:nth-child(2) { animation-delay: 0.2s; }
+    .thinking span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes bounce {
+      0%, 60%, 100% { transform: translateY(0); }
+      30% { transform: translateY(-8px); }
+    }
+    footer {
+      width: 100%;
+      max-width: 740px;
+      padding: 16px;
+      border-top: 1px solid #2a2a2a;
+    }
+    .input-row { display: flex; gap: 10px; align-items: flex-end; }
+    textarea {
+      flex: 1;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 12px;
+      color: #e8e0d0;
+      font-family: 'Georgia', serif;
+      font-size: 0.95rem;
+      padding: 12px 16px;
+      resize: none;
+      min-height: 52px;
+      max-height: 160px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    textarea:focus { border-color: #c9a96e; }
+    button {
+      background: #c9a96e;
+      color: #0f0f0f;
+      border: none;
+      border-radius: 12px;
+      padding: 13px 22px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    button:hover { background: #e0c080; }
+    button:disabled { background: #555; cursor: not-allowed; }
+    .hint { font-size: 0.75rem; color: #555; margin-top: 8px; text-align: center; }
+    .badge-admin {
+      display: inline-block;
+      font-size: 0.7rem;
+      color: #c9a96e;
+      border: 1px solid #c9a96e;
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-left: 8px;
+      vertical-align: middle;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daniel Morel Éternel <span class="badge-admin">Espace privé</span></h1>
+    <p>30 ans d'expertise en PNL, Ennéagramme et développement humain</p>
+  </header>
+
+  <!-- Écran de connexion -->
+  <div id="login-screen">
+    <h2>Accès réservé</h2>
+    <input type="password" id="password-input" placeholder="Mot de passe"
+      onkeydown="if(event.key==='Enter') connexion();" />
+    <button onclick="connexion()">Entrer</button>
+    <p id="login-error">Mot de passe incorrect.</p>
+  </div>
+
+  <!-- Interface chat (cachée jusqu'à connexion) -->
+  <div id="chat-screen">
+    <div id="chat">
+      <div class="message daniel">
+        <span class="label">Daniel Morel</span>
+        <div class="bubble">Bonjour. Vous êtes dans l'espace privé — sans restriction. Je peux explorer librement avec vous : idées, projets, créations, enseignements. Par où voulez-vous commencer ?</div>
+      </div>
+    </div>
+    <footer>
+      <div class="input-row">
+        <textarea id="input" placeholder="Votre question à Daniel Morel…" rows="1"
+          onkeydown="if(event.key==='Enter' && !event.shiftKey){event.preventDefault();envoyer();}"></textarea>
+        <button id="btn" onclick="envoyer()">Envoyer</button>
+      </div>
+      <p class="hint">Appuyez sur Entrée pour envoyer · Shift+Entrée pour un saut de ligne</p>
+    </footer>
+  </div>
+
+  <script>
+    const API = "https://daniel-morel-eternel-production.up.railway.app";
+    let adminPassword = "";
+
+    function connexion() {
+      const pwd = document.getElementById("password-input").value.trim();
+      if (!pwd) return;
+
+      // Vérification du mot de passe via un appel test à l'API
+      fetch(`${API}/chat-admin`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-admin-password": pwd
+        },
+        body: JSON.stringify({ question: "test" })
+      }).then(resp => {
+        if (resp.ok || resp.status === 400) {
+          // 400 = question vide acceptée côté serveur = mot de passe correct
+          adminPassword = pwd;
+          document.getElementById("login-screen").style.display = "none";
+          document.getElementById("chat-screen").style.display = "flex";
+          document.getElementById("chat-screen").style.flexDirection = "column";
+          document.getElementById("chat-screen").style.width = "100%";
+          document.getElementById("chat-screen").style.alignItems = "center";
+          document.getElementById("chat-screen").style.flex = "1";
+          document.getElementById("input").focus();
+        } else {
+          document.getElementById("login-error").style.display = "block";
+        }
+      }).catch(() => {
+        document.getElementById("login-error").style.display = "block";
+      });
+    }
+
+    const chat = document.getElementById("chat");
+
+    function ajouterMessage(role, texte) {
+      const div = document.createElement("div");
+      div.className = `message ${role}`;
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = role === "user" ? "Vous" : "Daniel Morel";
+      const bubble = document.createElement("div");
+      bubble.className = "bubble";
+      bubble.textContent = texte;
+      div.appendChild(label);
+      div.appendChild(bubble);
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+      return bubble;
+    }
+
+    function afficherThinking() {
+      const div = document.createElement("div");
+      div.className = "message daniel";
+      div.id = "thinking";
+      const label = document.createElement("span");
+      label.className = "label";
+      label.textContent = "Daniel Morel";
+      const dots = document.createElement("div");
+      dots.className = "thinking";
+      dots.innerHTML = "<span></span><span></span><span></span>";
+      div.appendChild(label);
+      div.appendChild(dots);
+      chat.appendChild(div);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    function supprimerThinking() {
+      const el = document.getElementById("thinking");
+      if (el) el.remove();
+    }
+
+    async function envoyer() {
+      const input = document.getElementById("input");
+      const btn = document.getElementById("btn");
+      const question = input.value.trim();
+      if (!question) return;
+      input.value = "";
+      btn.disabled = true;
+
+      ajouterMessage("user", question);
+      afficherThinking();
+
+      try {
+        const resp = await fetch(`${API}/chat-admin`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-admin-password": adminPassword
+          },
+          body: JSON.stringify({ question, nb_resultats: 5 })
+        });
+        const data = await resp.json();
+        supprimerThinking();
+        if (resp.ok) {
+          ajouterMessage("daniel", data.reponse);
+        } else {
+          ajouterMessage("daniel", "Erreur : " + (data.detail || resp.status));
+        }
+      } catch (e) {
+        supprimerThinking();
+        ajouterMessage("daniel", "Impossible de joindre le serveur. Veuillez réessayer.");
+      }
+
+      btn.disabled = false;
+      input.focus();
+    }
+  </script>
+</body>
+</html>
