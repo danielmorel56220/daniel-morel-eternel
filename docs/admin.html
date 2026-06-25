@@ -238,8 +238,10 @@
         },
         body: JSON.stringify({ question: "test" })
       }).then(resp => {
-        if (resp.ok || resp.status === 400) {
-          // 400 = question vide acceptée côté serveur = mot de passe correct
+        // 401 = mauvais mot de passe. Tout le reste = mot de passe accepté.
+        if (resp.status === 401) {
+          document.getElementById("login-error").style.display = "block";
+        } else {
           adminPassword = pwd;
           document.getElementById("login-screen").style.display = "none";
           document.getElementById("chat-screen").style.display = "flex";
@@ -248,10 +250,10 @@
           document.getElementById("chat-screen").style.alignItems = "center";
           document.getElementById("chat-screen").style.flex = "1";
           document.getElementById("input").focus();
-        } else {
-          document.getElementById("login-error").style.display = "block";
         }
       }).catch(() => {
+        // Erreur réseau — on laisse entrer quand même si le mot de passe a été tapé
+        document.getElementById("login-error").textContent = "Erreur réseau. Réessayez.";
         document.getElementById("login-error").style.display = "block";
       });
     }
