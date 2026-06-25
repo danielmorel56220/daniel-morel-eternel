@@ -7,6 +7,8 @@ import os
 import requests as http
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Header
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 load_dotenv()
 from fastapi.middleware.cors import CORSMiddleware
@@ -50,6 +52,16 @@ class Reponse(BaseModel):
 @app.get("/")
 def racine():
     return {"message": "Daniel Morel Éternel — API en ligne ✅"}
+
+
+@app.get("/chat-public")
+def chat_public_page():
+    return FileResponse("docs/index.html")
+
+
+@app.get("/admin")
+def admin_page():
+    return FileResponse("docs/admin.html")
 
 
 @app.post("/recherche", response_model=Reponse)
