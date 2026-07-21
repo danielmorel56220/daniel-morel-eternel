@@ -17,7 +17,11 @@ from fastembed import TextEmbedding
 import anthropic
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://igdodyugqyeprtufohea.supabase.co")
-SUPABASE_KEY = os.getenv("SUPABASE_KEY", "sb_publishable_325QLr_MStROaoHZ50DypQ_8rHCU0cH")
+SUPABASE_KEY = (
+    os.getenv("SUPABASE_KEY")
+    or os.getenv("SUPABASE_PUBLISHABLE_KEY")
+    or "sb_publishable_325QLr_MStROaoHZ50DypQ_8rHCU0cH"
+)
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "").strip()
 
 app = FastAPI(title="Daniel Morel Éternel", version="1.0")
@@ -54,6 +58,18 @@ def racine():
     return {"message": "Daniel Morel Éternel — API en ligne ✅"}
 
 
+@app.get("/sante")
+def sante():
+    """Vérifie rapidement si les clés nécessaires sont bien présentes (sans les afficher)."""
+    return {
+        "api": "ok",
+        "anthropic_cle_presente": bool(ANTHROPIC_KEY),
+        "supabase_url": SUPABASE_URL,
+        "supabase_cle_presente": bool(SUPABASE_KEY),
+        "supabase_cle_prefixe": (SUPABASE_KEY[:12] + "…") if SUPABASE_KEY else "",
+    }
+
+
 @app.get("/chat-public")
 def chat_public_page():
     return FileResponse("docs/index.html")
@@ -69,7 +85,10 @@ def recherche(body: Question):
     if not body.question.strip():
         raise HTTPException(status_code=400, detail="La question est vide.")
 
-    embedding = [float(x) for x in next(iter(embedder.embed([body.question])))]
+    try:
+        embedding = [float(x) for x in next(iter(embedder.embed([body.question])))]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erreur embedding: {type(e).__name__}: {e}")
 
     headers = {
         "apikey": SUPABASE_KEY,
@@ -77,21 +96,27 @@ def recherche(body: Question):
         "Content-Type": "application/json",
     }
 
-    resp = http.post(
-        f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
-        headers=headers,
-        json={"query_embedding": embedding, "nb_resultats": body.nb_resultats},
-        timeout=15,
-    )
+    try:
+        resp = http.post(
+            f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
+            headers=headers,
+            json={"query_embedding": embedding, "nb_resultats": body.nb_resultats},
+            timeout=15,
+        )
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"Connexion Supabase impossible: {e}")
 
     if resp.status_code != 200:
         raise HTTPException(status_code=502, detail=f"Supabase: {resp.text}")
 
-    rows = resp.json()
-    extraits = [
-        Extrait(contenu=r["contenu"], source=r["source"], similarite=round(r["similarite"], 4))
-        for r in rows
-    ]
+    try:
+        rows = resp.json()
+        extraits = [
+            Extrait(contenu=r["contenu"], source=r["source"], similarite=round(r["similarite"], 4))
+            for r in rows
+        ]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Réponse Supabase invalide: {e} | corps={resp.text[:300]}")
 
     return Reponse(question=body.question, extraits=extraits)
 
