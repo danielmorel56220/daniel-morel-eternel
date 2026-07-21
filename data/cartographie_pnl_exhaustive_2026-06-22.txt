@@ -1,0 +1,1296 @@
+CARTOGRAPHIE EXHAUSTIVE DES EXERCICES ET TECHNIQUES PNL PAR NIVEAU
+Daniel Morel — Daniel Morel Institut / Résonance Formation
+Document établi le 2026-06-22 à partir des déroulés pédagogiques, cahiers participants,
+fiches stagiaires et synopsis de tous les niveaux de certification.
+(CNV et Ennéagramme exclus — traités séparément)
+
+Sources consultées :
+- Déroulés pédagogiques officiels (Bases, Technicien, Praticien, MP Modules I/II/III)
+- Fiches Métaprogrammes (7 fiches Technicien + reprises Praticien)
+- Cahier participant Technicien V4
+- Manuel Hexafor
+- Trames Niveaux Logiques Daniel Morel (montée et descente)
+- Multidissociation PNL 2025
+- Le Core Process 2ème partie
+- Fiche Création Métaphore Complète
+- Tris Primaires PNL
+- Synopsis MP1, MP2, MP3 PIP
+- Fabrique du Changement 2019
+
+==========================================================================
+NIVEAU 1 — BASES PNL (3 jours / 21 heures)
+"Découverte du véhicule"
+==========================================================================
+
+=== PHILOSOPHIE ET FONDEMENTS ===
+
+TECHNIQUE : PRÉSENTATION DE LA PNL
+- Signification de P (Neuro : construction de programmes/habitudes conditionnant perception et pensée), N (Linguistique : manifestation via langage et comportements), L (Programmation : le tout ensemble)
+- Origines : Bandler (psychologue & informaticien) + Grinder (psychologue & linguiste)
+- Modélisation de : Milton Erickson (hypnose thérapeutique), Virginia Satir (thérapie familiale), Fritz Perls (Gestalt), École de Palo Alto / Gregory Bateson, Alfred Korzybski
+- Exercice d'introduction : "Qui connaît la PNL ? Ça évoque quoi pour vous ?" → débriefing collectif
+
+TECHNIQUE : LES PRÉSUPPOSÉS DE LA PNL (8 à 10 présupposés)
+- La carte n'est pas le territoire
+- Chacun dispose des ressources dont il a besoin
+- Les échecs se transforment en apprentissages
+- On ne peut pas ne pas communiquer
+- Le sens de mon message est dans la réponse que j'obtiens
+- Chacun fait le choix le mieux adapté parmi ce qui est disponible
+- Il y a une intention positive dans tout comportement
+- Nous avons des comportements, nous ne sommes pas nos comportements
+- Le corps et l'esprit font partie du même système
+- La résistance est un manque de rapport
+
+CONCEPT : LES 4 ÉTAPES DE L'APPRENTISSAGE
+1. Incompétence inconsciente : je ne sais pas que je ne sais pas
+2. Incompétence consciente : je sais que je ne sais pas
+3. Compétence consciente : je sais faire mais cela mobilise mon attention
+4. Compétence inconsciente : agir en dirigeant l'attention sur autre chose
+- Application : réagir ou agir / zone d'influence personnelle
+
+CONCEPT : LES 5 PILIERS DE LA FORMATION
+Moi/Identité/Valeurs/Croyances / Objectif-Projet / Ressources-États Internes / Communication-Relation / Évolution personnelle
+- Structure de base de tout accompagnement : objectif >> ressources >> relation
+
+CONCEPT : ACTEUR DE SA VIE
+- Réactif vs Proactif
+- Subir vs Créer (situations, réactions)
+- Automatismes vs Choix
+- Zone d'influence personnelle
+
+=== LES TRIS PRIMAIRES (Manuel Hexafor) ===
+
+TECHNIQUE : IDENTIFICATION DES 4 TRIS PRIMAIRES
+Question clé : "Quand vous entrez dans une situation nouvelle, que remarquez-vous en premier ?"
+- TRI PERSONNE : centré sur les relations et les émotions → Les gens (applications : coaching, RH)
+- TRI ACTIVITÉ : privilégie l'action et les résultats → L'action (applications : gestion de projet, sport)
+- TRI INFORMATION : recherche de faits, analyse, précision → Les détails (applications : audit, ingénierie)
+- TRI LIEU : sensible au cadre physique → L'environnement (applications : design, hôtellerie)
+Usage : adapte la communication et l'approche selon le tri primaire de l'interlocuteur
+
+=== LE RAPPORT DE CONFIANCE ===
+
+CONCEPT : RAPPORT DE CONFIANCE
+- Règles explicites (culturelles) et implicites (individuelles), verbales et non-verbales
+- Conscience interne vs conscience externe
+- 7±2 champs de conscience (capacité attentionnelle)
+- Centré sur soi vs centré sur l'autre
+
+TECHNIQUE : LA REFORMULATION
+- Pourquoi : preuve d'écoute, reste centré sur l'autre
+- Quand : à l'inspiration, fin d'unité de sens
+- Comment : mots de l'autre, laisser la responsabilité, adapter voix et posture, sélectionner les mots marqués
+
+TECHNIQUE : CALIBRATION
+- Observer finement les signaux non verbaux : couleur de peau, tonus musculaire, respiration, posture
+- Lire les états internes à travers le corps
+- Distinguer états de confort / inconfort
+- Distance personnelle : variable selon individu, culture, contexte → calibrer les réactions à l'approche
+
+TECHNIQUE : SYNCHRONISATION ET RAPPORT
+- Synchronisation posturale, vocale (rythme, tonalité, volume), gestuelle
+- Synchronisation verbale : utiliser les mots de l'interlocuteur
+- Rapport = condition sine qua non de toute communication efficace
+- La résistance est un manque de rapport → si ça résiste, synchronisez d'abord
+
+=== LES CANAUX SENSORIELS ===
+
+CONCEPT : VAKOG (Visuel, Auditif, Kinesthésique, Olfactif, Gustatif)
+- Chacun perçoit le monde à travers un système sensoriel préférentiel
+- Identifier son système primaire et celui de l'interlocuteur pour mieux communiquer
+
+TECHNIQUE : ACCÈS OCULAIRES (introduction)
+- Vc (visuel construit) : haut droite
+- Vm (visuel mémorisé) : haut gauche
+- Ac (auditif construit) : milieu droite
+- Am (auditif mémorisé) : milieu gauche
+- K (kinesthésique) : bas droite
+- Aid (auditif interne digital) : bas gauche
+Indicateurs comportementaux :
+- Dominante V : voix haute, mains haut, parle vite
+- Dominante A : voix modulée, tête penchée, rythme moyen
+- Dominante K : voix profonde, mains au plexus, parle lentement
+
+CONCEPT : L'INDEX DE LA CONSCIENCE
+- CE = Comportements Externes : ce qui peut être vu ou entendu par un observateur
+- PI = Processus Internes : penser, réfléchir, imaginer, se souvenir, se parler à soi-même
+- EI = États Internes : émotions, sensations, sentiments
+
+=== L'OBJECTIF ===
+
+TECHNIQUE : L'OBJECTIF EN 5 POINTS
+1. Conscience de l'objectif (ce que je veux obtenir)
+2. Conscience des conséquences (des alliances)
+3. Conscience des premiers pas (à quoi je saurai que je suis sur la bonne voie)
+4. Conscience des ressources (énergie intérieure, à quoi je saurai que j'ai atteint mon but)
+5. Écologie (qu'est-ce que je suis prêt à laisser aller ?)
+Exercice : démo avec volontaire + travail en binôme 2x30' (réf. livre "Accompagnement d'un ami")
+
+TECHNIQUE : CRITÈRES DE L'OBJECTIF (SMART PNL)
+- Précis et spécifique
+- Formulé en termes positifs
+- Réalisable et atteignable
+- Dépendant de soi (contrôlable par soi)
+- Écologique (rapport gagnant-gagnant avec l'environnement)
+- Mesurable : critères internes (ressenti) et externes (observables)
+
+TECHNIQUE : LA PUISSANCE DU MENTAL ET DE LA FOCALISATION
+- Exercice de l'anneau : A forme un anneau pouce-index, B mesure la force pour l'ouvrir → A se concentre, enraciné → B re-mesure la force
+- Exercice du bras : focalisation sur contraintes vs focalisation sur l'objectif
+- Exposé : accueil de la problématique vs focalisation sur l'objectif
+
+=== LES ÉTATS INTERNES ===
+
+CONCEPT : SOURCES D'ÉNERGIE
+- Exposé interactif sur nos sources d'énergie
+- Démo avec volontaire : retrouver des moments de belle énergie, mettre un mot sur l'expérience, se laisser envahir par l'émotion (évocation VAKOG)
+- Exercice en binôme : chaque participant retrouve 3 expériences positives (3 x 2')
+
+TECHNIQUE : LES MARQUES D'ATTENTION (POISSONS)
+Caractéristiques :
+- Indispensables pour la survie biologique et psychologique
+- Source d'énergie, positive ou négative
+- Conditionnelles et/ou inconditionnelles
+- Gratuites et inépuisables
+Règles :
+- Chacun a son type préféré
+- Préfère recevoir des MA négatives que rien du tout
+- Pour fonctionner au mieux : 10 MA positives pour 1 MA négative
+Qualité d'une MA : spécifique, contextualisée, personnalisée, sincère
+Comment faire un compliment : le donner rapidement, souligner qu'il renforce les résultats, privilégier la qualité à la quantité
+Exercice : échange de "petits poissons" — se poursuit tout au long du séminaire
+
+CONCEPT : MÉCANIQUE DES ÉTATS INTERNES
+- Exercice du centimètre : gravir un escalier / voiture endommagée / négo banquier / personne appréciée / ongle sur tableau noir
+- 3 paramètres qui influencent un EI : corps / mental / contexte
+- Focus sur la tranquillité intérieure : automatismes et choix d'un EI
+
+CONCEPT : LE SPECTRE ÉMOTIONNEL
+- Haute énergie / Basse énergie
+- Plaisant / Déplaisant
+→ 4 quadrants : enthousiasme, peur, paix, tristesse
+
+CONCEPT : L'ÉCHELLE DES ÉTATS INTERNES
+- Construire avec : colère, tristesse, peur → intelligence émotionnelle
+- Ou détruire avec → survie
+- 3P (Plaisant, Positif, Productif) vs PSV (Peur, Souffrance, Violence)
+
+CONCEPT : LE CYCLE DES CROYANCES
+Croyances → Perception/EI/Sentiment → Comportements → Résultats → confirme les Croyances
+Exemple : faire une omelette (cycle quand ça marche bien)
+
+=== LES ANCRAGES ===
+
+TECHNIQUE : L'ANCRAGE EXTERNE (kinesthésique)
+Exercice démo : kinesthésique externe avec un volontaire
+1. Souvenir ressource (identification)
+2. Entrée dans l'état (évocation VAKOG)
+3. Test de l'ancre
+Exercice en trinôme (3 x 5')
+
+TECHNIQUE : L'AUTO-ANCRAGE — MÉTHODE EN 5 ÉTAPES
+1. Choisir l'état interne ressource désiré
+2. Retrouver une expérience de référence
+3. Revivifier pleinement (VAKOG)
+4. Poser l'ancre au pic de l'état
+5. Tester + pont futur
+Exercice en binôme
+
+TECHNIQUE : LA PRÉPARATION MENTALE EN 5 ÉTAPES
+1. Définir la situation future à préparer
+2. Entrer dans l'état ressource désiré (ancrage)
+3. Visualiser la situation vécue avec succès (associé)
+4. Vérifier l'écologie
+5. Pont futur / ancrage
+Exercice en binôme + débriefing
+
+=== LA COMMUNICATION ===
+
+CONCEPT : LES NIVEAUX DE CONSCIENCE
+- Conscient / Préconscient / Inconscient
+- Ne pas confondre souplesse et soumission (exemple : se mettre au niveau d'un enfant)
+- Prise en compte de ce qui est important pour moi ET pour l'autre
+- Reliance pour évoluer
+
+TECHNIQUE : L'ÉCOUTE — FOND ET FORME
+- Exercice dos à dos : "Ce que tu me dis…"
+- Mot → Pensée → Souvenir → Expérience émotionnelle
+- Je ne défends pas l'idée mais le sentiment à l'égard de l'idée → sentiment toujours vrai
+- 1re étape : prise en compte du sentiment
+
+TECHNIQUE : L'ÉCOUTE ACTIVE
+- Écoute silencieuse
+- Relance
+- Validation du message
+- Exercice de groupe avec l'image de Boring (vieille/jeune femme) : monter l'énergie du désaccord, puis faire prendre conscience que chacun voit selon son filtre
+
+TECHNIQUE : BOUCLE ET NŒUD RELATIONNELS
+- La boucle relationnelle (communication fluide)
+- Le nœud relationnel (communication bloquée)
+- 3 réflexes qui conditionnent ou non la communication :
+  1. Généralisation → précision
+  2. Attitude de rejet → ouverture
+  3. Affirmation → questionnement
+
+TECHNIQUE : LES PARAMÈTRES DU RAPPORT
+- Exercice de groupe : trouver le paramètre qui conditionne la relation avec 3 personnes avec qui je m'entends bien + 3 avec qui je m'entends mal
+- Que faire quand je m'entends mal avec quelqu'un ?
+
+=== LES VALEURS ===
+
+TECHNIQUE : PRISE DE CONSCIENCE DES DOMAINES DE VIE ET ASPIRATIONS
+- Exercice 360° sur sa vie
+- Démo avec volontaire : "Qu'est-ce qui est important pour toi ?"
+- Distinguer domaine (contextualiser) et valeur (aspiration)
+- Exercice en binôme 2 x 5'
+
+TECHNIQUE : PROJECTION DANS LE FUTUR (À 5, 3 ET 1 AN)
+Exercice individuel (3 x 10') sur 3 feuilles de papier, d'abord dissocié puis associé :
+1. "Je suis dans un grand magasin et je peux prendre tout ce que je veux — comment est ma vie à 5 ans ?"
+2. À (5 ans) – 2 ans
+3. À ((5 ans) – 2 ans) – 2 ans
+Règle : aucun engagement, plus il y a de contenu mieux c'est
+
+TECHNIQUE : PROTOCOLE À 3 — LES 5 CHOSES LES PLUS IMPORTANTES
+("3 anges au paradis")
+A parle de A en dissocié (3e personne) et énonce tour à tour les 5 choses les plus importantes
+B & C : garants du protocole, répètent après chaque chose les 5 choses importantes
+Débriefing en grand groupe
+
+=== LE MÉTA-MODÈLE (Introduction — Manuel Hexafor) ===
+
+CONCEPT : LE MÉTA-MODÈLE
+Outil de questionnement pour récupérer l'information omise, distordue ou généralisée
+
+Les OMISSIONS :
+- Omissions simples : élément absent ("Je suis triste" → Triste de quoi ?)
+- Manques d'Index de Référence : éléments imprécis ("Ils ne comprennent pas" → Qui exactement ?)
+- Comparaisons sans référent : "C'est mieux" → mieux que quoi ?
+- Verbes non spécifiques : "Elle m'aide" → comment aide-t-elle ?
+- Nominalisations : processus transformé en nom fixe ("ma communication" → comment tu communiques ?)
+
+Les GÉNÉRALISATIONS :
+- Quantificateurs universels : tout, jamais, personne, toujours, chaque…
+- Opérateurs modaux : devoir, pouvoir, falloir (de nécessité / de possibilité)
+
+Les DISTORSIONS :
+- Causes-effets : "Ce qu'il fait me rend triste" → comment exactement ?
+- Lectures de pensée : "Je sais ce qu'il pense"
+
+MÉTA-MODÈLE vs MILTON MODÈLE
+- Méta-Modèle : précis, direct → récupère l'information précise
+- Milton Modèle : vague, indirect → s'adresse à l'inconscient
+
+=== LES SOUS-MODALITÉS (Introduction — Manuel Hexafor) ===
+
+SOUS-MODALITÉS VISUELLES : Couleurs/Noir&Blanc, Associé/Dissocié, Taille/Distance, Net/Flou, Brillance/Contraste, Perspective, 2D/3D
+SOUS-MODALITÉS KINESTHÉSIQUES : Poids/Densité, Élasticité/Rigidité, Pression/Température, Texture/Rugosité, Viscosité/Fluidité
+SOUS-MODALITÉS AUDITIVES : Mono/Stéréo, Rythme, Tonalité, Débit, Volume
+SOUS-MODALITÉS GUSTATIVES : Acidité, Amertume, Sucré/Salé, Cru/Cuit/Rôti, Lacté, Fermenté, Âpre, Fade/Épicé
+SOUS-MODALITÉS OLFACTIVES : Forte/Légère, Agréable/Nauséabonde, Douce/Poivrée/Fruitée, Grillée/Boisée/Épicée
+
+Principe : Piloter = modifier des paramètres (filtres) → modifier les réactions
+Paramètres modifiables : couleur, volume, débit, distance, objet, associé/dissocié
+
+==========================================================================
+NIVEAU 2 — TECHNICIEN PNL (6 jours / 42 heures)
+"On se met au volant"
+==========================================================================
+
+=== PERCEPTION ET LANGAGE ===
+
+TECHNIQUE : LES PRÉDICATS (VAKOG verbaux)
+- Traitement de l'information via le canal sensoriel préférentiel
+- VAKOG interne/externe, passé-présent-futur
+- Représentation interne : imagination ou mémorisation
+- Canal privilégié identifié par les prédicats (mots qui révèlent le canal utilisé)
+Exercice 1 : Brainstorming par 5 colonnes (quels mots identifient quel canal ?)
+Exercice 2 (par 3 — 2x5 à 7') : A raconte une histoire riche en prédicats / B repère prédicats et canaux + non verbal / C pose des questions pour enrichir et préciser
+Exercice 3 (par 3) : "Maison de vos rêves" — A parle sur un seul canal, B et C questionnent sur le même canal, rotation de canal
+Règle clé : + de prédicats → + vivant → + passionnant → + hypnotique
+
+TECHNIQUE : LES MOUVEMENTS OCULAIRES
+- Traitement de l'information et mouvement des yeux (schéma complet)
+- Notion passé et futur (dans quelle main est mon passé / mon futur ?)
+- Remémoré vs construit (imagination, créativité)
+Exercice (par 4 à 8 — 30') : rotation questions / observations / débriefing
+
+TECHNIQUE : LA TAILLE DE DÉCOUPAGE
+- Grand découpage : nominalisations, verbes non spécifiques, niveau logique supérieur
+- Petit découpage : détails concrets, exemples précis
+
+TECHNIQUE : IDENTIFICATION / DIFFÉRENCIATION (Match/Mismatch)
+Voir les ressemblances vs voir les différences
+4 manières de différencier :
+- Polarité (affirmer l'opposé)
+- Contre-exemple
+- Changement de découpage
+- Méta-commentaire
+
+=== LES SOUS-MODALITÉS (approfondissement) ===
+
+TECHNIQUE : SOUS-MODALITÉS — CHANGER LE RAPPORT À L'EXPÉRIENCE
+Principe : la forme prend le dessus sur le contenu
+Codification : Expérience externe (perception) → codification (filtres) en sous-modalités (VAKOG) → Expérience interne (positif ou négatif)
+Important : "Piloter son cerveau = avoir la main sur les filtres"
+
+Exercice démo de groupe (Popcorn) : modifier relation à une expérience via sous-modalités
+Exercice par 2 (2x15') : A guide vers changement de sous-modalités / changer le rapport à l'expérience
+Règle : changer la relation à l'expérience, pas le contenu
+
+=== LES TECHNIQUES DE CHANGEMENT (Technicien) ===
+
+TECHNIQUE : LE BROUILLAGE
+Adapté à : souvenirs désagréables (altercation, mauvaise sensation), peurs des enfants
+Principe : modifications ludiques (contenu) + modifications structurelles (sous-modalités) — jouer sur les extrêmes et la vitesse de changement
+Protocole :
+1. Retrouver une expérience désagréable (sentiment)
+2. Situer le souvenir dans l'espace (image dissociée)
+3. Modifications ludiques du contenu (exagérer, rendre ridicule)
+4. Modifications structurelles des sous-modalités
+Important : jouer sur les extrêmes et la vitesse de changement. Une fois à l'aise, mélanger les sous-modalités
+Exercice par 2 (2x20')
+
+TECHNIQUE : LA DISSOCIATION SIMPLE
+Niveau au-dessus du brouillage / événements vécus plus fortement
+Comprend : Objectif + Sous-modalités + Ancrage
+Applicable aux événements passés ou futurs
+Protocole (film en 5 étapes) :
+1. Retrouver l'expérience/situation désagréable (sentiment)
+2. Identifier et entrer dans un État Ressource + expérience de référence
+3. Poser les décors du film en 5 étapes (dissocié)
+4. Recomposer le film en mouvement d'acteur (en arrière)
+5. Expérimenter le film associé (en arrière en premier)
+6. Faire le pont futur/passé
+Exercice par 2 (2x25')
+
+TECHNIQUE : LE CUMUL D'ANCRAGES
+Rappel bases : stimulus → réaction (EI) / Expérience externe → codage → expérience interne
+EI = un ressenti unique
+Protocole :
+1. Ancrage positif 1 (blanc) → TEST
+2. Ancrage positif 2 (blanc) → TEST
+3. Stimuler les deux ancres simultanément
+4. Pont futur/passé
+Exercice par 2 (2x20')
+
+TECHNIQUE : LA DÉSACTIVATION D'ANCRE NÉGATIVE
+"À chaque fois que S → je R"
+Important : c'est la variation entre deux états ressentis
+Pour accompagner : identifier le déclencheur et la réponse émotionnelle / inutile de renforcer l'état négatif / pousser l'état ressource / jouer dans le temps
+Protocole :
+1. Identifier EI négatif et son déclencheur → Ancrer / État Séparateur / Test
+2. Identifier EI positif + expérience de référence → Ancrer / Séparateur / Test
+3. Stimuler les deux ancres simultanément
+4. Pont futur/passé
+Exercice par 2 (2x20' — deux passages)
+
+TECHNIQUE : LA BOUSSOLE DU LANGAGE
+Outil de questionnement pour la précision du langage
+Situation → Traitement de l'information → Réaction
+Traitement : Faits vs Interprétations
+Les Faits : Sujet / Contexte / Actions
+Les Interprétations : Jugements / Valeurs ou Règles
+- Jugements et valeurs : bien, mal, possible, impossible
+- Règles : falloir, devoir, pouvoir
+- Les interprétations = reflet de nos croyances
+- X=Y (équivalence complexe) et X→Y (rapport de cause à effet)
+Important : "Cet outil est la base de votre accompagnement PNL"
+Exercice par 3 (3x5') : A raconte histoire / B encourage le discours / C prend note faits et interprétations
+Exercice avancé par 2 (2x30') : A expose un projet/rêve, B pose des questions de l'objectif ET de la boussole
+
+TECHNIQUE : LE RECADRAGE EN 6 POINTS (1er joyau de la PNL)
+Technique de changement de comportement
+Principes : intention positive / parties de personnalités
+Protocole :
+1. Identifier le comportement à changer
+2. Identifier la partie auteur du comportement
+3. Identifier l'intention positive de cette partie
+4. Identifier la partie créatrice et chercher de nouvelles options (3 min)
+5. Valider l'option
+6. Vérifier l'écologie (tour du propriétaire) + Pont vers le futur et passé
+Exercice par 2 (2x30')
+
+TECHNIQUE : LE SWISH
+Aiguillage neuronal / Image résiduelle qui revient
+Principe : le cerveau ne peut pas gérer deux images en même temps
+Protocole :
+1. Voir l'image négative
+2. Voir une image positive et la réduire
+3. Superposer la petite positive sur la grande négative
+4. Faire grandir l'image positive devant l'autre rapidement (dire "Swiiiishhh !!!")
+5. Ouvrir les yeux → état séparateur
+6. Recommencer 10 à 15 fois
+Exercice par 2 (2x20')
+
+=== LES VALEURS (protocole complet) ===
+
+TECHNIQUE : IDENTIFICATION DES VALEURS (liste de 60 valeurs)
+Exercice "Marche en huit" — par 3 (2x30' ou 3x20') :
+A : marche en huit / B : pose les questions, challenge A, prend note des réponses / C : note pour lui les valeurs qui lui correspondent
+Questions types :
+- "Qu'est-ce qui est important pour toi dans [domaine de vie] ?"
+- "Quoi d'autre ? Et encore ?"
+- "Qu'est-ce que cela te permet de plus important encore ?"
+- "Quand tu fais ça, tu accèdes à quoi de plus important encore ?"
+- "Qu'est-ce que cela nourrit chez toi ?"
+Objectif : au moins 60 valeurs sur tous les domaines de vie
+
+TECHNIQUE : SÉLECTION DES 7 VALEURS CLÉS
+Objectif : établir une hiérarchie des 7 valeurs les plus importantes
+Par 2 (2x45') — A lit à B toutes ses valeurs, B attentif au non-verbal
+Procédure de comparaison : "Tu préfères une vie avec moins de X et plus de Y ou l'inverse ?"
+Technique des mains : poser les valeurs sur les mains (fermer les yeux) et sentir le poids
+
+TECHNIQUE : DÉFINITION DES VALEURS (passage au niveau limbique)
+Par 2 (2x40' — max 5'/valeur) :
+1. Prendre contact avec la valeur (ex : liberté)
+2. Retrouver une expérience de référence
+3. Évocation multi-sensorielle VAKOG
+4. Localiser la sensation dans le corps
+5. Imaginer une couleur
+6. Diffuser la couleur intérieure et extérieure
+7. Prononcer la phrase : "Pour moi la [liberté] c'est quand…"
+
+TECHNIQUE : INTÉGRATION / EMPILEMENT DES VALEURS
+Par 2 (2x30') :
+- Prendre contact avec la valeur, l'expérience et la couleur
+- Évocation multi-sensorielle VAKOG, diffusion
+- Laisser revenir les valeurs suivantes, les expériences et couleurs successivement
+- "Alors que tu prends contact avec toutes ces dimensions, tu peux simplement penser aux différents domaines de ta vie et mesurer la différence…"
+
+TECHNIQUE : VALEURS ET COMPORTEMENTS
+Lien de cause à effet entre valeur et comportement
+0 culpabilité, 0 jugement
+Par 2 (2x30') : prendre contact avec la valeur → identifier 3 à 4 comportements non alignés
+"Comment fais-tu dans ta vie pour ne pas la respecter ?"
+Alterner, chacun son tour une valeur
+
+TECHNIQUE : LE CHEMIN DE VIE
+Projection dans l'avenir avec ses valeurs (1 mois, 3 mois, 1 an, et plus)
+Par 2 (2x45') :
+1. Prendre contact avec mes valeurs, l'expérience et la couleur
+2. Me voir dans un mois avec mes valeurs et comportements liés
+3. Intégrer le moi à un mois et vivre pleinement mes valeurs
+4. Et ainsi de suite jusqu'à 1 an et plus / Revenir au point de départ
+5. Recommencer avec variante sans mes valeurs (contraste)
+6. Refaire un passage seul aller-retour en vivant ses valeurs
+7. Réintégrer tout ce qui a été vécu
+
+=== LES MÉTA-PROGRAMMES (Technicien) ===
+
+MÉTAPROGRAMME 1 : ACTIF / RÉCEPTIF
+- Actif : initie, prend les devants, propose spontanément → se penche vers l'avant
+- Réceptif : réagit, attend les sollicitations, répond → ouvert, à l'écoute
+Adaptation :
+- Actif : aller droit au but, laisser de l'espace pour agir, responsabiliser
+- Réceptif : être clair dans la demande, créer un cadre sécurisant, laisser le temps d'intégrer
+
+MÉTAPROGRAMME 2 : COMPARAISON (MOI/MOI — MOI/AUTRE — AUTRE/AUTRE)
+- MOI/MOI : se compare à lui-même (progression personnelle, standards internes)
+- MOI/AUTRE : se compare à une personne ou norme externe
+- AUTRE/AUTRE : compare deux choses entre elles sans se référer à soi
+Adaptation : valoriser la progression / références visibles / analyse factuelle
+
+MÉTAPROGRAMME 3 : IN TIME / THROUGH TIME
+- In Time : immergé dans l'instant, ressent fortement la transformation émotionnelle
+- Through Time : prend du recul, cartographie les événements dans une continuité
+Observation : "Je sens que ça change" (IT) vs "Depuis mars, les résultats ont baissé" (TT)
+Adaptation : se connecter au ressenti (IT) / donner des repères temporels (TT)
+
+MÉTAPROGRAMME 4 : LOIN / VERS (Éloignement / Objectif)
+- Loin : motivation à s'éloigner d'un danger, d'un problème, d'un inconfort
+- Vers : motivation à se rapprocher d'un but, d'un résultat positif
+Signaux : "Je veux éviter…" (Loin) / "Je veux construire…" (Vers)
+Adaptation : souligner les conséquences à éviter (Loin) / les bénéfices positifs (Vers)
+
+MÉTAPROGRAMME 5 : MATCH / MISMATCH (Identification / Différenciation)
+- Match : remarque d'abord ce qui est semblable, ce qui va bien, ce qui est cohérent
+- Mismatch : remarque d'abord ce qui est différent, ce qui manque, ce qui ne va pas
+Important : ce n'est pas accord vs désaccord — c'est un filtre de perception
+Exercice : image avec 4 fautes → qui remarque quoi en premier ?
+Exercice par binôme : regarder une image ou lire un texte, noter ce que l'on remarque en premier, discuter
+Adaptation : souligner convergences (Match) / préparer arguments solides (Mismatch)
+
+MÉTAPROGRAMME 6 : ORIENTATION TEMPORELLE (Passé / Présent / Futur)
+- Passé : s'appuie sur l'expérience, les souvenirs, les références historiques
+- Présent : vit dans l'instant, focalisé sur l'ici et maintenant
+- Futur : orienté vers les objectifs, les projets, les conséquences à venir
+Adaptation : valoriser l'expérience (Passé) / concret immédiat (Présent) / bénéfices futurs (Futur)
+
+MÉTAPROGRAMMES SUPPLÉMENTAIRES (présentés dans le déroulé Technicien) :
+- Référence interne / Référence externe : qui décide que j'ai bien fait ?
+- Global / Spécifique : vision d'ensemble vs pas à pas
+- Options / Procédures : créer des possibilités vs suivre les étapes
+- Opérateurs modaux : Envie (vouloir) / Pouvoir (capacité) / Devoir (responsabilité)
+
+==========================================================================
+NIVEAU 3 — PRATICIEN PNL (10 jours / 70 heures)
+"On s'occupe du conducteur — identité"
+==========================================================================
+
+=== HYPNOSE ERICKSONIENNE ===
+
+TECHNIQUE : INTRODUCTION À L'HYPNOSE ERICKSONIENNE
+- Conscient / Inconscient — l'inconscient comme réservoir de ressources
+- Histoire de l'âne d'Erickson (pourquoi faire de l'hypnose)
+- Définition de l'état hypnotique : état de focalisation
+- Caractéristiques de l'inconscient
+
+PHÉNOMÈNES HYPNOTIQUES (7) :
+1. Distorsion du temps : augmenter ou diminuer le temps
+2. Pseudo-orientation dans le temps : capacité du cerveau à vivre du passé au futur
+3. Changement mnésique : se rappeler même ce qui semble oublié
+4. Distorsion des sensations : saut dans le vide / douleur / etc.
+5. Changements musculaires
+6. Rêverie / Hallucination (distorsion)
+7. Changement de personnalité : changement de rôle
+
+TECHNIQUE : COMMUNICATION INDIRECTE — MILTON MODÈLE
+Formes principales :
+- Présuppositions : "Lorsque vous aurez réussi…" / "Quand cela ira mieux…"
+- Tâches multiples liées : lier une action qu'on pourrait oublier avec une action sûre
+- Saupoudrage (commandes incorporées)
+- Les truismes : "Oui physiologique…"
+- Les ambiguïtés et les confusions
+- Les anecdotes et les métaphores
+
+TECHNIQUE : PREMIER EXERCICE HYPNOSE (triangle rapport)
+Points clés :
+1. Rapport : synchro / authenticité / reconnaissance / ancrage
+2. Dissocier conscient/inconscient (une partie fait ça, une autre fait si)
+3. Faire des liens (associer un fait réel à un résultat subjectif désiré)
+4. Utiliser un langage non spécifique (Milton modèle)
+Protocole avec triangle (objectif-valeur-EI-relation) :
+1. Prendre contact avec le monde intérieur puis penser à un domaine de vie
+2. Interroger sur ce qui est important (valeurs — centre du triangle)
+3. Décoller et avancer dans le temps vers l'état désiré futur (objectif)
+4. Connecter aux sensations de cette réussite (états internes)
+5. Connecter aux relations et ce que cela change (relation)
+Exercice de groupe 3/3 ou 4/4 — A accompagne B, C et D en même temps, langage non spécifique (3x10')
+
+=== LA PUISSANCE DES QUESTIONS ===
+
+TECHNIQUE : QUESTIONNEMENT POSITIF ET CONSTRUCTIF
+Principes :
+- Situation → codification → réaction (état émotionnel)
+- La codification se fait par des questions (spirale montante ou descendante)
+- L'évaluation est directement liée à l'état émotionnel
+Exercice de groupe (3x15') :
+A : expose une problématique passée ou présente
+B : guide vers un questionnement positif et constructif
+
+=== LES VALEURS DANS LE TEMPS ===
+
+TECHNIQUE : VOYAGE DANS LE TEMPS (valeurs il y a 10 ans)
+A : dessine un rond sur une feuille et écrit "– 10 ans"
+B : guide A vers ce souvenir — tout ce qu'il faisait et ce qui était important (domaines de vie, activités, personnes)
+Exercice de groupe 3x15'
+
+TECHNIQUE : LES 3 BULLES (valeurs dans le temps)
+Dessiner 3 ronds sur une feuille — "Il y a 10 ans" :
+- Rond 1 : Qu'est-ce qui était important et qui ne l'est plus aujourd'hui ?
+- Rond 2 : Qu'est-ce qui était important et qui l'est encore aujourd'hui ?
+- Rond 3 : Qu'est-ce qui n'était pas vraiment important et qui l'est aujourd'hui ?
+Exercice de groupe 3x15'
+
+TECHNIQUE : MOI QUAND J'AVAIS 7 ANS (raison d'être)
+Questions clés :
+- Quels étaient mes héros d'enfance ?
+- Quels étaient mes modèles, personnes admirées ?
+- Si j'avais été un héros, lequel aurais-je été ?
+Exercice de groupe 3x30'
+
+TECHNIQUE : RAISON D'ÊTRE — EXTRACTION DES VALEURS ET CROYANCES
+Phase 1 : Extraire les valeurs (page 12) — identifier au moins 5 éléments clés qui me représentent
+- Observer la ligne de vie passée, présent, futur
+- "Qu'est-ce qui est vraiment important pour toi ?"
+
+Phase 2 : Identifier le processus de renforcement des valeurs (croyances)
+- Quelle est ta première valeur ?
+- Que ressens-tu ?
+- Quels comportements as-tu ?
+- Quels feedback obtiens-tu de la vie et des gens ?
+- "Qu'est-ce que cela te permet de confirmer ?" → système de croyances
+
+=== LES DOMAINES DE VIE ===
+
+TECHNIQUE : PLAN DE VIE
+Phase 1 : Production d'activités
+Objectif : identifier 30 activités auxquelles je consacre du temps (15 min)
+A questionne B et vis-versa
+
+Phase 2 : Identifier les domaines
+Objectif : classer ces 30 activités dans 5 domaines de vie (10 min)
+
+TECHNIQUE : COHÉRENCE PERSONNELLE (domaines de vie)
+Métaphore : "Le paysan devant ses champs"
+Pour chaque domaine :
+- Vision : quelle représentation idéale et métaphorique de toi dans ce domaine ?
+- Bilan acquis : qu'est-ce qui est acquis et permet de tendre vers cette vision ?
+- Bilan sources : quelles choses à changer / améliorer ?
+- Bilan priorités : quelles actions prioritaires et concrètes ?
+- Alliances : qui peut t'aider à progresser ?
+- Apprentissages : quels savoir-faire à acquérir ?
+- Principes : sur quels principes vas-tu appuyer ce développement ?
+Exercice de groupe (au moins 2 domaines par personne — ~2x30')
+
+=== LES ALERTES ÉMOTIONNELLES ===
+
+TECHNIQUE : IDENTIFICATION DES ALERTES ÉMOTIONNELLES (15 à 20)
+Choisir un domaine de vie / penser aux situations vécues avec les proches
+Questions :
+- "Lorsque tu sens que dans ta vie quelque chose part de travers, quelles sont les émotions qui se manifestent ?"
+- "Quand tu fais cela, quel est le sentiment qui génère cela ?"
+- "Quand tu ressens cela, qu'est-ce que cela te permet de confirmer ?"
+Les 4 catégories d'alertes :
+- Peur : signal d'un danger réel ou fantasmé / entraîne passivité (destruction) ou action (construction) / proportionnelle au besoin de sécurité
+- Colère : les règles du jeu ne sont pas respectées (décalage)
+- Tristesse : j'ai perdu quelque chose (perte de lien)
+- Dégoût : sentiment de rejet / mélange de colère et de tristesse
+Exercice de groupe 2x10' : classer les alertes
+
+TECHNIQUE : GESTION DES ALERTES ÉMOTIONNELLES
+Objectif : changer de stratégie et répondre à mes alertes
+Protocole (à faire en marchant) :
+1. Accueillir mon alerte, considération, reconnaissance
+2. Identifier l'aspiration (le besoin, la valeur) derrière l'alerte
+3. Comment je m'y suis déjà pris (attitudes, actions, stratégies) pour satisfaire ce besoin ?
+4. Choisir la stratégie à mettre en place par rapport au contexte
+5. Faire une association avec la fierté, l'enthousiasme d'avoir mis en place cette stratégie + ancrage positif massif
+Important : la puissance est dans la précision et l'énergie de l'accompagnement
+Exercice de groupe (1 à 2 alertes par personne — 2x40') × 2 passages
+
+TECHNIQUE : LES JOYAUX ÉMOTIONNELS (15 à 20)
+Lorsque j'avance dans un domaine aligné avec mes valeurs, comment mon corps et mes émotions se manifestent ?
+Protocole :
+1. Imaginer devant un de ses domaines de vie
+2. Reprendre contact avec la vision idéale dans ce domaine
+3. Quand tu sais que tu avances dans la direction de cette vision, qu'est-ce que tu ressens émotionnellement ?
+4. Qu'est-ce que cela t'apporte ? Qu'est-ce que cela confirme ?
+5. Qu'est-ce que tu touches de plus grand ?
+6. Qu'est-ce qui change dans ta façon d'être et de vivre ?
+Exercice de groupe 2x40'
+
+=== LE SYSTÈME DE CROYANCES ===
+
+TECHNIQUE : IDENTIFICATION DES CROYANCES LIMITANTES
+3 grandes racines de croyances limitantes :
+- Parent : "il est trop tard…" (désir, envie — "je n'ai plus d'espoir")
+- Adulte : "je n'ai pas les moyens…" (options, possible — "je ne suis plus capable")
+- Enfant : "je ne mérite pas" (devoir)
+Protocole (dos à dos — 2x45') :
+- Reprendre 1 à 3 domaines de vie / choisir celui à transformer le plus
+- Questions (page 29 du cahier)
+- Écouter, reformuler, accompagner (sans discussion)
+- Prendre note des croyances de l'autre
+
+TECHNIQUE : IMPACT DES CROYANCES SUR LA VIE PASSÉE
+Objectif : prendre conscience de l'impact de vos croyances sur vos décisions de vie
+Durée : 2x30' (passer plusieurs croyances limitantes)
+Protocole :
+1. Imagine que tu regardes ta vie passée
+2. Avec ce type de croyance, comment as-tu conduit ta vie ? (perception → sentiment → comportement → résultats)
+3. Quelles limites cela a-t-il engendré ?
+
+TECHNIQUE : CHANGEMENT DE CROYANCE MENTAL/CORTICAL
+Condition : la personne doit désirer changer
+Une croyance contient un lien : X=Y (équivalence complexe) ou X→Y (cause à effet)
+Protocole :
+1. Mettre à jour la croyance limitante (relation X=Y ou X→Y)
+2. Bien détacher X et Y, chercher ce que je veux entre X et Y (état désiré)
+3. "Imagine que tu vis dans un monde…" (nouvelle version + état émotionnel)
+4. "Qu'est-ce que tu dois lâcher ?"
+5. "Est-ce que tu connais quelqu'un qui a fait X sans avoir Y ?"
+6. "Est-ce que tu as des exemples où tu as vécu X sans avoir Y ?"
+Incidence émotionnelle : grande tristesse / peur (perte d'autorité parentale)
+
+TECHNIQUE : LA MARELLE DES CROYANCES (changement de croyance au niveau limbique)
+6 papiers A5 = 6 étapes
+Phase 1 — Identification :
+- Papier 1 : ma croyance limitante (si doute : "Quand vous êtes en stress, qu'est-ce que cette croyance me permet de confirmer ?")
+- Papiers 2 à 6 : 5 bains émotionnels (événements correspondant à chaque niveau "Doute")
+- Trouver et se reconnecter (ressenti) à un événement correspondant à chaque niveau
+Exercice de groupe Phase 1 : 2x30'
+
+Phase 2 (au présent) :
+1. Debout sur le papier croyance limitante, se connecter
+2. Se dissocier : "prends de la hauteur" ou "déplace-toi en méta"
+3. Observer l'événement suivant (1er "Doute")
+4. Entrer dans l'expérience "Doute" VAKOG
+5. Dire à haute voix : "Tout comme je doute de [X], je doute de ma croyance limitante"
+6. Retour au point 2
+
+Phase 3 (au passé) :
+1. Debout sur le papier croyance limitante, se connecter
+2. Entrer dans l'expérience "Doute" VAKOG
+3. Dire à haute voix : "Tout comme j'ai douté de [X], j'ai douté de ma croyance limitante"
+4. Entrer dans l'expérience suivante, etc.
+
+Phase 4 : Réintégration hypnotique
+Exercice de groupe : 3x45' × 2 jours
+
+=== TECHNIQUES DE CHANGEMENT PROFOND (Praticien) ===
+
+TECHNIQUE : CHANGEMENT D'HISTOIRE DE VIE
+Principe : les croyances résultent d'événements et de sentiments (comme un arbre)
+La mémoire est liée aux perceptions de la vie (un escalier à 3 ans n'est plus le même à 20 ans)
+
+Phase 1 — Identifier un comportement/sentiment répétitif (2x15') :
+1. Choisir un domaine de vie dans lequel je veux évoluer
+2. Qu'est-ce que je désire le plus dans ce domaine ?
+3. Y a-t-il un frein à obtenir cela ?
+4. Quel sentiment je ressens ? Est-ce que cela revient ?
+
+Phase 2 — Changer la perception (3x45') :
+1. Identifier le ressenti (la dernière fois que c'est arrivé) VAKOG
+2. Fermer les yeux et prendre contact avec un souvenir important similaire
+3. Faire un pas en arrière (déplacement physique)
+4. Être dans cet événement (VAKOG) — lui donner un titre
+5. Prendre contact avec un souvenir important similaire (+ ancien)
+6. Faire un pas en arrière / donner un titre
+7. Et ainsi de suite jusqu'à l'événement source
+8. Une fois à la source, dissocier la personne
+9. Observer, décrire ce qu'il se passe (VAKOG dissocié)
+10. "Imagine que cet enfant ait été un héros dans cette situation — quel héros ? Quel talent peut-il développer ?"
+11. S'associer à l'événement et le vivre pleinement
+12. Observer la scène suivante (dissocié) — qu'est-ce que cela change
+13. S'associer à l'événement suivant, etc. — jusqu'au présent
+
+TECHNIQUE : MULTI-DISSOCIATION / DOUBLE DISSOCIATION
+Indications : réaction émotionnelle disproportionnée (phobies, rage, deuil, rejet, écœurement)
+On agit sur le PROCESSUS (sous-modalités) plutôt que sur l'événement
+
+Protocole Multi-Dissociation (7 étapes — technique 2025) :
+1. Calibrer la réponse phobique : évoquer brièvement l'expérience traumatique, observer les réactions, faire ressortir aussitôt
+2. Ancrage de dissociation : rappeler les éléments du contexte présent, se voir installé ici à côté de soi, ancrer sur l'épaule
+3. Ancrage de sécurité : guider dans une expérience de sécurité, ancrer en serrant la main
+4. Mise en place de la dissociation : choisir un lieu pour visionner la scène (théâtre, cinéma), se placer à l'âge actuel comme spectateur
+5. Visionner le film noir et blanc et sans son : focaliser sur les réactions du spectateur, ajouter progressivement les sous-modalités visuelles et auditives
+6. Simple dissociation : quand le spectateur s'est habitué à voir la scène, aller à sa place et visualiser le film du passé
+7. Rencontre avec la personne plus jeune : après l'expérience, la rassurer, lui expliquer qu'elle va survivre et qu'elle a fait le meilleur choix
+
+Protocole Double Dissociation (cinéma — déroulé) :
+1. Identifier le problème (réaction disproportionnée — état interne déclencheur)
+2. Identifier la ressource — événement — VAKOG — ancrage
+3. Poser le décor : cinéma (double dissociation)
+4. Reconnecter l'état ressource
+5. Projeter sur l'écran la dernière image du film (là où tout va bien)
+6. Tout en te regardant dans la salle, voir le film jusqu'au bout
+Exercice de groupe 3x45'
+
+TECHNIQUE : TRAITEMENT DES ALLERGIES (via Multi-Dissociation)
+Phase 1 : Identifier l'allergène (réaction du système immunitaire — erreur du corps)
+- Identifier précisément l'allergène (représentation métaphorique)
+- Imaginer une coupe du corps — voir l'allergène entrer, réaction de la muqueuse, info vers le cerveau
+- Remercier le corps et le système immunitaire
+
+Phase 2 : Créer un faux allergène
+- Même représentation métaphorique mais inoffensive
+- Suivre le processus — tout au vert — remercier
+
+Phase 3 : Créer 3 espaces et mélanger
+- Espace 1 : soi dans lieu ressource (protégé, neutre)
+- Espace 2 : à côté, rempli de faux allergène avec un vrai soi
+- Espace 3 : autre espace avec vrai allergène et faux soi
+- Le vrai soi réagit parfaitement bien au faux allergène / le faux soi réagit bien au vrai allergène
+- Entrer dans l'espace avec le faux allergène → tout va bien
+- Entrer dans l'espace avec le vrai → tout va bien
+- Mélanger les espaces, la bonne réaction, intégrer, remercier
+- Pont vers le futur et le passé
+Exercice de groupe 3x30'
+
+TECHNIQUE : NÉGOCIATION DE PARTIE (2ème joyau de la PNL)
+Alignement intérieur — "Voiture dont la direction n'est pas bien réglée"
+Objectif : scanner les parties qui vont dans des directions différentes
+
+Protocole :
+1. Identifier les parties en conflit par rapport à un projet
+2. Placer chaque partie dans une de mes mains — faire un symbole ou personnage
+3. Demander à chaque partie si elle est ok de se mettre en contact avec l'autre
+4. Mettre à jour l'intention positive et le but de chaque partie
+5. Trouver l'objectif, le but commun aux deux parties
+6. Demander à chaque partie de regarder l'autre pour identifier en quoi elle est une ressource pour l'autre et pour le projet commun
+7. Laisser les mains se rapprocher pour créer une fusion (nouvelle partie ou association) / laisser les mains rejoindre le plexus ou le cœur pour réintégrer
+8. Pont vers le futur/passé
+Exercice de groupe 3x45'
+
+=== NIVEAUX LOGIQUES (trames complètes — Praticien) ===
+
+TECHNIQUE : MONTÉE DANS LES NIVEAUX LOGIQUES (Environnement → Mission)
+Questions clés par niveau :
+
+Niveau 1 — ENVIRONNEMENT / RÉSULTATS :
+"Dans quel contexte précis cette situation se déroule-t-elle ?" / "Quelles sont les conditions extérieures ?" / "Avec qui, dans quel lieu, à quel moment ?" / "Qu'est-ce que tu constates comme résultats concrets ?" / "Qu'observes-tu dans les faits, sans jugement ?" / "Quel lien entre le cadre et les résultats obtenus ?"
+
+Niveau 2 — COMPORTEMENTS :
+"Qu'est-ce que tu fais concrètement ?" / "Quelles sont les actions ou réactions que tu engages régulièrement ?" / "Qu'est-ce que tu évites de faire ou de dire ?" / "Quelles habitudes d'action reviennent souvent ?"
+
+Niveau 3 — CAPACITÉS / DYNAMIQUE ÉMOTIONNELLE :
+"Dans quel état émotionnel es-tu généralement ?" / "Qu'est-ce que tu ressens juste avant d'agir ?" / "Quelles émotions prennent le dessus ?" / "Comment ces émotions influencent-elles ton accès à tes ressources ?" / "Quelles compétences mobilises-tu ?" / "Qu'as-tu déjà appris qui pourrait t'aider ici ?"
+
+Niveau 4 — CROYANCES / VALEURS :
+"Qu'est-ce que tu crois être vrai dans cette situation ?" / "Quelles idées dirigent ton attitude ?" / "Quelles valeurs comptent profondément pour toi ici ?" / "Quelles croyances t'éloignent de ce que tu veux incarner ?" / "Quelles contradictions entre croyances et valeurs ?"
+
+Niveau 5 — IDENTITÉ :
+"Quelle image de toi est activée ?" / "Quel rôle occupes-tu ici, consciemment ou non ?" / "Qui es-tu en train d'être ?" / "Quel masque ou quelle posture adoptes-tu ?" / "À quelle version de toi fais-tu appel ?"
+
+Niveau 6 — MISSION / SENS / CONTRIBUTION :
+"À quoi contribues-tu au fond quand tu es pleinement toi-même ?" / "Quel sens profond donnes-tu à ce que tu vis ?" / "À quoi es-tu loyal intérieurement ?" / "Quelle vision plus large t'appelle ?" / "Qu'est-ce que cette situation révèle de ton engagement dans quelque chose de plus grand ?"
+
+TECHNIQUE : DESCENTE DANS LES NIVEAUX LOGIQUES (Mission → Environnement)
+Questions clés par niveau (sens inverse — du sens vers le concret) :
+
+Niveau 6 → Mission :
+"Quelle vision du monde est activée en toi ?" / "Comment perçois-tu la place de cette situation dans le monde ?" / "En quoi cette expérience te connecte à quelque chose de plus vaste ?" / "À quoi veux-tu contribuer dans ta manière d'être ?"
+
+Niveau 5 → Identité :
+"Qui choisis-tu d'être à travers cette vision ?" / "Quel rôle endosses-tu consciemment ou inconsciemment ?" / "Quelle facette de toi cherches-tu à exprimer ?" / "Comment l'image que tu as de toi influence ce que tu crois possible ?"
+
+Niveau 4 → Croyances/Valeurs :
+"Quelles croyances découlent de la manière dont tu te perçois ?" / "Quelles valeurs centrales dirigent ta manière d'agir ?" / "Comment tes valeurs t'ouvrent ou te ferment certaines possibilités ?" / "Comment ces croyances ont-elles évolué dans le temps ?"
+
+Niveau 3 → Capacités :
+"Quelles ressources internes deviennent accessibles quand tes croyances sont en cohérence avec tes valeurs ?" / "Quelles capacités sont présentes mais parfois bloquées ?" / "Comment tes stratégies internes dépendent de tes valeurs ou croyances ?"
+
+Niveau 2 → Comportements :
+"Quels comportements émergent quand tu es connecté à tes ressources ?" / "Quelles réactions automatiques surgissent quand tes ressources sont perturbées ?" / "Qu'est-ce que tes comportements permettent ou empêchent ?"
+
+Niveau 1 → Environnement :
+"Quels résultats concrets sont générés par tes comportements ?" / "Quelles traces visibles ton comportement laisse-t-il ?" / "Comment l'espace autour de toi se transforme selon ta manière d'agir ?"
+
+TECHNIQUE : CRÉATION D'UNE MÉTAPHORE THÉRAPEUTIQUE
+5 étapes :
+1. Recueillir l'information : structure du problème (contexte, objectif, personnages, lieu, réponse inadaptée)
+2. Trouver l'éclairage : ce qui coince (critères non respectés), autres manières de remplir les critères
+3. Formuler un point de vue : quel message ou apprentissage ? (en termes de transformation et de ressources)
+4. Créer une situation isomorphique : imaginer une situation éloignée mais structurellement équivalente
+5. Raconter la métaphore : laisser venir l'histoire, détails sensoriels VAKOG, laisser la personne entendre ce qu'elle est prête à intégrer
+Règles :
+- Respecter les présupposés de la personne
+- Ne jamais parler de la situation réelle
+- Ne jamais dire à la personne quoi penser ou faire
+- Clé : permettre à la personne de retrouver du pouvoir intérieur sans se sentir dirigée
+
+==========================================================================
+NIVEAU 4 — MAÎTRE PRATICIEN PNL (18 jours en 3 modules)
+"On enrichit le conducteur"
+==========================================================================
+
+=== MODULE I — Zones d'ombre ===
+
+TECHNIQUE : NIVEAUX LOGIQUES — APPLICATION SUR UN PROJET
+Exercice démo de groupe : NL appliqués sur un projet actuel (choisir un projet actuel, exercer le questionnement NL, faire vivre à B chaque niveau)
+Exercice de groupe 2x30'
+
+TECHNIQUE : ALERTES AUX NIVEAUX LOGIQUES
+- Identifier le niveau logique de la situation problématique
+- Identifier les différentes alertes par niveau
+Démo de groupe :
+- Identifier la situation si elle avait réussi
+- Identifier les raisons pour lesquelles ça n'a pas marché (sentiments ou comportements)
+- Identifier les comportements actuels, les comparer avec le résultat désiré
+Exercice de groupe 1x30' / 2x30'
+
+TECHNIQUE : HYPNOSE — APPROFONDISSEMENT ET 7 ÉTAPES
+Rappel des mécanismes hypnotiques
+Accompagnement en 7 étapes (triangle) :
+1. Domaine de vie — s'imaginer pleinement satisfait
+2. Conscience de ce que je veux et atteins (objectif/projet)
+3. Conscience de mes ressources, états internes
+4. Conscience des relations et feedback
+5. Montée en énergie et pont futur
+Principales formes de communication indirecte :
+- Introspection / focalisation / ratification
+- Dissociation / décrochage
+- Choix du contexte de travail (métaphore)
+- Représentation / État désiré / Projection futur
+- Identification comportement/ressources en lien avec l'objectif
+
+TECHNIQUE : LA LIGNE DU TEMPS
+Conception du cerveau droit (espace et temps)
+- Le cerveau ne fait aucune différence entre perceptions intérieures et extérieures
+- Être dans le temps vs à côté
+- Création d'objets métaphoriques (transposition d'expériences)
+Identification des messages positifs (croyances) ressortant de la ligne du temps → à quel niveau logique les placer ?
+Exercice de groupe 2x30'
+
+TECHNIQUE : LE CARRÉ MAGIQUE
+Croise 2 notions : Ligne de temps + Positions de perception
+Usages : renforcer une croyance, renforcer une ressource, prendre une décision, clarifier un doute
+Protocole (1 centre, 2 allié présent, 3 ange présent) :
+- Allié : une personne ressource connue
+- Entité : un modèle, un sage (réel ou symbolique)
+- Notions de différences de posture : P1, P2, P3
+- Message toujours le même (verbalisation source)
+- Intégrer toutes les personnes
+Exercice de groupe 3x60' (A + B + C)
+
+TECHNIQUE : LA RÉEMPRUNTE (Reimprinting)
+Objectif : Réconciliation avec le passé / son environnement
+Important :
+- Prise en compte de l'environnement
+- Dissocier le comportement de l'intention
+- Donner le droit à la personne responsable d'avoir agi de cette façon
+Rappel préalable : identifier le sentiment / l'alerte émotionnelle / l'émotion de base / le comportement / l'intention positive
+Protocole :
+1. Connecter l'émotion et remonter jusqu'à l'événement déclencheur
+2. Se dissocier et identifier les personnes liées à la situation
+3. S'associer à chaque personne et trouver l'intention positive
+4. S'associer à l'enfant pour prendre conscience de l'intention positive de l'adulte
+5. S'associer à l'adulte et adapter le comportement (donner le droit)
+6. S'associer à l'enfant et revisiter les événements futurs, fort de cette nouvelle expérience enrichie / Intégration de la nouvelle identité
+7. Pont vers le futur
+Exercice de groupe 3x60'
+
+TECHNIQUE : LA COHÉSION PERSONNELLE
+Objectif : créer une cohérence personnelle avec prise en compte de l'environnement
+Protocole (en 5 points) :
+1. Identifier un projet
+2. Identifier les croyances / aspirations / identité par rapport au projet
+3. Clarifier le sens du projet / liens émotionnels
+4. Identifier les ressources liées à la réalisation du projet
+5. Prendre conscience de ce que j'ai besoin de développer
+Exercice de groupe 2x30' × 3 parties
+
+TECHNIQUE : LA MÉTAPHORE DE SITUATION ET DE VIE
+Métaphore de situation :
+- Quelle est la métaphore qui vous vient quand vous écoutez la personne parler de sa situation ?
+- Exprimer une métaphore par rapport à l'histoire de A
+- Objectif : transposer une réalité en métaphore pour passer un message de reconsidération indirecte
+Exercice de groupe 2x15'
+
+Métaphore de vie :
+Protocole partie 1 (mise à jour) :
+1. Penser à son avenir (domaine de vie)
+2. "Dans ce domaine, pour moi, la vie c'est comme…"
+3. Identifier la métaphore (écrire, dessiner)
+Protocole partie 2 (évaluation et enrichissement) :
+1. "Quel lien fais-tu entre cette métaphore et ta vie actuelle ?"
+2. "Quelle métaphore cette métaphore t'inspire-t-elle ?"
+Exercice de groupe 2x30' × 2 parties
+
+=== MODULE II — Zones de lumière ===
+
+TECHNIQUE : ALLIANCES IDENTITAIRES (Alliés des Niveaux Logiques)
+Un allié par niveau logique :
+- Environnement → Ange gardien
+- Comportement → Coach
+- Capacités → Enseignant
+- Valeurs & Croyances → Mentor
+- Identité → Sponsor
+- Mission → Éveilleur
+Exercice créatif préalable : "Quelles sont mes plus grandes satisfactions ?" / "Ce à quoi je veux le plus contribuer ?" → créer une image métaphorique (2x20')
+Protocole technique des Alliés :
+1. Identifier un projet qui me porte
+2. Monter et redescendre les NL en imaginant avoir pleinement accompli le projet
+3. Disposer les alliés autour de soi / Les nommer et définir leurs caractéristiques
+4. Entrer dans la peau du premier allié, monter en énergie, exprimer un mot ou une phrase
+5. Revenir dans ma peau et recevoir le message
+6. Ainsi de suite pour chaque allié
+Exercice de groupe 3x45'
+
+TECHNIQUE : HYPNOSE — FONDAMENTAUX APPROFONDIS (7 mécanismes)
+Partie 1 — Phénomènes hypnotiques (approfondissement) :
+- Distorsion du temps / Pseudo-orientation
+- Changement mnésique / Distorsion des sensations
+- Changement musculaire / Rêverie-Hallucination
+- Changement de personnalité
+
+Partie 2 — Communication indirecte avancée :
+- Les présuppositions / Les tâches multiples liées
+- Le saupoudrage / Les truismes
+- Les ambiguïtés et la confusion / Les anecdotes et métaphores
+
+TECHNIQUE : LE CORE PROCESS — PARTIE 1 (Montée vers l'État Source)
+Pour toute problématique récurrente ou physique
+Orienté vers l'aspect positif, solution, lumière (non vers la souffrance)
+Recherche d'un état source auto-suffisant
+Traits communs avec : recadrage en 6 points, ligne de temps, changement d'histoire de vie
+
+Important : montée au niveau du sentiment, de l'énergie / Langage non spécifique
+
+Protocole :
+1. Quelle est la problématique ? Décrire l'événement. Prendre contact avec la partie et la sensation négative
+2. Remercier la partie de se manifester
+3. "Demander à la partie ce qui lui manque, ce qu'elle a perdu, ce qu'elle demande"
+4. Si réponse CE ou PI : "Imagine qui tu es dans ce CE, cette prise de distance — à quoi accède cette partie ?"
+5. "Rentre dedans, couleur, accueille, rayonnement, étends, laisse ta tête s'envoler…"
+6. "À quoi de plus grand, de plus essentiel cela te permet-il d'accéder ?" → ainsi de suite vers l'ÉTAT SOURCE
+7. Redescente : "En quoi cela vient enrichir [le niveau inférieur]… Prends le temps d'accueillir"
+8. "Quand tu repenses à cette situation, en quoi ces dimensions viennent transformer ce que tu vivais ?"
+9. Remercier cette partie
+Note technique : quand la personne tend à partir dans le cerveau → aller vers les sensations : "Au centre de cela, au cœur de cela, qu'est-ce qu'il y a de plus ESSENTIEL ?"
+
+TECHNIQUE : LE CORE PROCESS — PARTIE 2 (Régression et systèmes de défense)
+Contexte théorique :
+- À la naissance : tout est possible / tout se vit au présent
+- Adaptation à l'environnement (défense primaire) → besoin d'amour inconditionnel
+- Si je fais X → j'obtiens l'amour inconditionnel (déni du besoin) → faux espoir / faux pouvoir
+- Adulte : dépendance → indépendance → interdépendance / La croissance passe au travers des autres
+- Ce qui n'est pas transformé revient / Ce qui est bon pour moi est bon pour mon environnement
+
+Les 4 points clés du processus de régression :
+1. Faire la différence entre la douleur d'aujourd'hui et la douleur du passé
+2. Réaliser l'ampleur de l'ancienne douleur (celle de l'enfant d'autrefois)
+3. Découvrir que l'ancienne douleur ne peut nuire aujourd'hui
+4. Découvrir le désir qui était derrière à l'époque / Imaginer l'enfant comblé de ce désir
+
+Protocole Partie 2 :
+1. Core Process Partie 1
+2. Reconnecter la partie responsable du comportement
+3. Identifier intuitivement à quel âge cette partie est née → remonter jusqu'à cet âge
+4. Dissocier l'enfant avec la partie responsable / accueillir le comportement / reconnaître l'intelligence et l'utilité passée du comportement / lui transmettre l'énergie de l'état source
+5. Une fois réconcilié, réintégrer l'enfant et sa partie
+6. Remonter en âge jusqu'à l'âge actuel, rester en énergie état source
+7. Core Process Partie 1 (à nouveau)
+8. Prise de conscience de l'impact des changements sur moi et les autres
+
+TECHNIQUE : LE CORE PROCESS — PARTIE 3 (Ligne du temps SOI + Famille)
+Protocole :
+1. (Dissocié) Poser les événements importants de ma vie sur une ligne de temps depuis ma naissance
+2. (Dissocié) Partir de ma naissance et revivre ma vie investis de l'État Source
+3. (Associé) Partir de ma naissance et revivre ma vie investis de l'État Source
+4. (Dissocié) Poser les événements importants de la vie de mes parents depuis leurs naissances
+5. Transmettre l'État Source à mes deux parents à leur naissance
+6. (Dissocié) Les accompagner le long de leur vie avec l'État Source jusqu'à ma venue au monde / Puis continuer et revivre ma vie investie de ces nouveaux apports
+7. Vérifier l'écologie, alliances, transformations, liens, place dans l'univers
+
+TECHNIQUE : LE CORE PROCESS COMPLET
+Intégration des 3 parties dans un seul accompagnement de 75 minutes
+Exercice de groupe 3x75'
+
+TECHNIQUE : DHE — DESIGN HUMAN ENGINEERING
+Protocole auditif :
+1. Identifier et localiser la voix intérieure négative (intérieur → extérieur)
+2. Identifier et localiser une voix positive (mentor) + sous-modalités
+3. Aligner la voix négative sur la localisation et les sous-modalités de la voix positive
+4. Pont vers le futur
+Exercice de groupe 2x20'
+
+TECHNIQUE : EMDR (Désensibilisation et Retraitement par Mouvements Oculaires)
+Protocole spécifique pour le traitement de traumatismes via les mouvements oculaires bilatéraux
+
+=== MODULE III — Analytique ===
+
+TECHNIQUE : MISSION ET VISION — EXERCICE DU BANQUET
+Protocole "Le Banquet" :
+- Se retrouver au paradis avec les grands de ce monde
+- Discuter autour de la table : "Qu'est-ce que j'aimerais leur raconter sur ma vie dont je serais fier et eux aussi ?"
+- Prendre contact avec ma mission de vie
+Exercice de groupe 2x30'
+Écriture d'un texte sur Ma Mission (10 à 15 lignes)
+Exercice 2x45' (dos à dos, inspirer avant de répondre)
+
+TECHNIQUE : LES MÉTA-PROGRAMMES AVANCÉS (Module III)
+Rappel des 7 méta-programmes Technicien + ajout de 8 nouveaux :
+
+NOUVEAUX MÉTA-PROGRAMMES MP3 :
+1. Global / Spécifique (vision d'ensemble vs détails)
+2. Tri : Lieux / Objets / Personnes / Activités / Information (qu'est-ce qu'on remarque en premier dans un contexte nouveau ?)
+3. Option / Nécessité (procédures) : créer des possibilités vs suivre les étapes
+4. Mode de conviction : VAK ? Faire / voir / entendre / toucher (comment suis-je convaincu ?)
+5. Décision : automatique vs nombre de fois nécessaires (combien de fois faut-il le montrer ?)
+6. Orientation du temps : Passé / Présent / Futur (frame temporel dominant)
+7. Indépendant / Leader / Équipe (rapport à l'autorité et au collectif)
+8. Zone de management : moi et les autres / seulement moi / les autres seulement
+
+TECHNIQUE : STRATEX — HISTOIRES À SUCCÈS (Identification de la stratégie d'excellence)
+Phase 1 — Identification des histoires :
+- Identifier 3 à 4 histoires de vie avec de la réussite (plus de réussite que prévu)
+- Dessiner la grille, poser un/deux mots
+- Écriture individuelle des histoires
+
+Phase 2 — Analyse des histoires :
+Pour chaque histoire, extraire :
+- Les méta-programmes utilisés
+- Les valeurs activées
+- Les niveaux logiques mobilisés
+- Les métaphores présentes
+Exercice de groupe 2x45' (histoires 1 et 2)
+
+Phase 3 — Création de la STRATEX :
+Extraire les modalités COMMUNES à toutes les histoires :
+- Qu'est-ce que je trouve de commun dans les 4 histoires ?
+- Dans les 3 histoires ? Dans les 2 histoires ?
+→ Ce qui est commun à toutes = la stratégie d'excellence reproductible (STRATEX)
+
+TECHNIQUE : L'ARBRE DE VIE
+Plan de vie à 3 mois, 6 mois, 1 an, 3 ans (1 à 3 domaines de vie)
+Créer une image métaphorique par domaine + collage
+
+TECHNIQUE : LA CATHÉDRALE DE VIE
+Récapitulation du processus complet de Module III
+Schéma : visions – valeurs – stratex – alliés – domaines de vie
+Métaphore : "La façon dont je vais m'occuper de mes jardins"
+Le faire en 3D sur le sol — accompagné
+Question fondamentale : "Comment puis-je améliorer la qualité de mon service dans chaque domaine ?"
+Protocole par domaine (3x40') :
+1. Identifier vos domaines de vie (4 à 5)
+2. Reprendre vision et valeurs pour chaque domaine
+3. Quelle métaphore par domaine ?
+Core Process depuis valeurs et mission d'un domaine à 3, 6 mois et 1 an
+
+TECHNIQUE : ESTIME DE SOI (Protocole en 2 parties)
+Partie 1 :
+1. Quelle représentation avez-vous de vous-même ?
+2. Modifier les modalités (contenu) → plus attractif
+3. Modifier les sous-modalités (forme) → plus attractif
+4. Fermer les yeux, passer de l'une à l'autre → mesurer la différence (ressentis/corps)
+5. Le faire de plus en plus vite → découvrir la différence
+
+Partie 2 :
+1. Partir de sa propre représentation
+2. Penser à quelqu'un qu'on admire, qu'on aimerait être
+3. Décrire la personne (modalités et sous-modalités)
+4. Ajouter sa propre représentation aux nouvelles sous-modalités
+5. Pont vers le futur
+
+TECHNIQUE : CORRECTEUR DE DÉCISION
+Objectif : ajuster sa vision du monde
+Protocole :
+1. Choisir un événement mal vécu
+2. Comment aurait-il fallu être pour le vivre autrement ?
+3. Trouver une forte expérience positive, connecter et ancrer
+4. Comparer et modifier la représentation et les sous-modalités
+5. Revivre l'événement avec ces nouveaux acquis
+
+TECHNIQUE : AUTOBIOGRAPHIE SOUS HYPNOSE
+- Accompagnement en hypnose (10 minutes sur une métaphore d'écriture)
+- En extérieur, papier + stylo, sans parler → enchaîner directement sur l'écriture
+- Écriture de son autobiographie (1x10')
+- Échange en groupe si l'envie
+
+TECHNIQUE : SWISH PLUS (version avancée)
+Technique Swish approfondie et enrichie avec les dimensions identitaires et les niveaux logiques
+
+CONCEPT : ÊTRE UNE PERSONNE RESSOURCE
+Synthèse du cursus complet → devenir une ressource pour les autres
+
+==========================================================================
+NIVEAU 5 — LA FABRIQUE DU CHANGEMENT
+(Formation complémentaire — "De la puissance de l'ego à la présidence de sa vie")
+==========================================================================
+
+CONCEPT : LES BESOINS FONDAMENTAUX ET L'ÉGO
+- Les besoins fondamentaux du bébé : Amour / Sécurité / Reconnaissance
+- Le bébé est 100% dépendant de son environnement (les "Présidents")
+- Référence : B.F. Skinner (conditionnement opérant)
+
+LES 5 NIVEAUX DE PERCEPTION DE SOI :
+1. Tel que je suis : Parfait
+2. Tel que je me perçois : Imparfait
+3. Tel que je crois qu'il faut me corriger pour être Parfait
+4. Tel que je crois que les autres me perçoivent : Parfait
+5. Tel que les autres me perçoivent réellement : Caricature
+
+L'AMBITION DE L'ÉGO :
+- Se regarder avec les yeux des autres / Avoir raison / Contrôler
+- AVOIR +/- : Mon/Ma/Mes, Argent, Corps, Études, Fonction, Enfants
+- ÊTRE +/- : Différent, Distinct, Fort, Fiable, Parfait, Approuvé
+- FAIRE +/- : Plaisir, Aimer tout le monde, Réussir, Gagner
+- Sinon je suis : nul, stupide, incapable → Angoisse
+
+TABLEAU DE CONTRASTE ÉGO vs MOI/ESSENCE :
+- EGO : 100% dépendance / Extérieur / Exister / Évitement / Angoisse/souffrance / Reconnaissance-Considération-Sécurité
+- MOI/ESSENCE : 100% Autonomie / Intérieur / Vivre / Réalisation / Amour/Sens / Satisfaction-Estime de soi-Confiance en soi
+
+BASCULE DU JE VERS LE MOI :
+- JE = objet du projet des autres → EXISTER
+- MOI = acteur de ma vie → VIVRE
+- Passage : JE avec Présidents/Autres → MOI avec MOI comme Président, Autres en relation
+
+==========================================================================
+INDEX ALPHABÉTIQUE DES TECHNIQUES
+==========================================================================
+
+ALERTES AUX NIVEAUX LOGIQUES → MP Module I
+ALERTES ÉMOTIONNELLES (identification et gestion) → Praticien
+ALLIANCES IDENTITAIRES (alliés des NL) → MP Module II
+ANCRAGE EXTERNE → Bases
+ARBRE DE VIE → MP Module III
+AUTO-ANCRAGE → Bases
+AUTOBIOGRAPHIE SOUS HYPNOSE → MP Module III
+BANQUET (exercice de mission) → MP Module III
+BOUSSOLE DU LANGAGE → Technicien
+BROUILLAGE → Technicien
+CARRÉ MAGIQUE → MP Module I
+CATHÉDRALE DE VIE → MP Module III
+CHANGEMENT D'HISTOIRE DE VIE → Praticien
+CHANGEMENT DE CROYANCE CORTICAL → Praticien
+CHEMIN DE VIE → Technicien
+COHÉSION PERSONNELLE → MP Module I
+COMMUNICATION INDIRECTE / MILTON MODÈLE → Praticien (intro) + MP (approfondissement)
+COMPARAISON (métaprogramme) → Technicien
+CORE PROCESS Partie 1 → MP Module II
+CORE PROCESS Partie 2 → MP Module II
+CORE PROCESS Partie 3 → MP Module II
+CORRECTEUR DE DÉCISION → MP Module III
+CRITÈRES DE L'OBJECTIF → Bases
+CUMUL D'ANCRAGES → Technicien
+DÉFINITION DES VALEURS (limbique) → Technicien
+DÉSACTIVATION D'ANCRE NÉGATIVE → Technicien
+DHE (Design Human Engineering) → MP Module II
+DISSOCIATION SIMPLE → Technicien
+DOMAINES DE VIE / COHÉRENCE PERSONNELLE → Praticien
+DOUBLE DISSOCIATION / MULTI-DISSOCIATION → Praticien
+ÉCOUTE ACTIVE → Bases
+EMDR → MP Module II
+EMPILEMENT DES VALEURS → Technicien
+ESTIME DE SOI → MP Module III
+ÉTAPES DE L'APPRENTISSAGE (4) → Bases
+HYPNOSE ERICKSONIENNE (introduction) → Praticien
+HYPNOSE APPROFONDISSEMENT (7 étapes) → MP Module I et II
+IDENTIFICATION DES VALEURS (60 valeurs) → Technicien
+IDENTIFICATION / DIFFÉRENCIATION (Match/Mismatch) → Bases (intro) + Technicien
+IN TIME / THROUGH TIME → Technicien
+INDEX DE LA CONSCIENCE (CE/PI/EI) → Bases
+INTÉGRATION DES VALEURS → Technicien
+JOYAUX ÉMOTIONNELS → Praticien
+LIGNE DU TEMPS → MP Module I
+LOIN / VERS → Technicien
+MARELLE DES CROYANCES → Praticien
+MATCH / MISMATCH → Technicien
+MÉTA-MODÈLE → Bases (intro complète) + approfondissement Technicien
+MÉTA-PROGRAMMES (introduction 6) → Technicien
+MÉTA-PROGRAMMES AVANCÉS (8 nouveaux) → MP Module III
+MÉTAPHORE DE SITUATION ET DE VIE → MP Module I
+MÉTAPHORE THÉRAPEUTIQUE (création) → Praticien
+MISSION ET VISION → MP Module III
+MOI QUAND J'AVAIS 7 ANS → Praticien
+MOUVEMENTS OCULAIRES → Technicien
+NÉGOCIATION DE PARTIE → Praticien
+NIVEAUX LOGIQUES (présentation) → MP Module I
+NIVEAUX LOGIQUES — TRAME MONTÉE → Praticien + MP
+NIVEAUX LOGIQUES — TRAME DESCENTE → Praticien + MP
+OBJECTIF EN 5 POINTS → Bases
+ORIENTATION TEMPORELLE → Technicien
+PLAN DE VIE (30 activités → 5 domaines) → Praticien
+POUVOIR DU MENTAL / FOCALISATION → Bases
+PRÉDICATS → Technicien
+PRÉPARATION MENTALE → Bases
+PRÉSUPPOSÉS DE LA PNL → Bases
+PROJECTION DANS LE FUTUR (5/3/1 ans) → Bases
+PUISSANCE DES QUESTIONS → Praticien
+QUESTIONNEMENT POSITIF/CONSTRUCTIF → Praticien
+RAPPORT DE CONFIANCE → Bases (Manuel Hexafor)
+RECADRAGE EN 6 POINTS → Technicien
+RÉEMPRUNTE (Reimprinting) → MP Module I
+REFORMULATION → Bases
+SÉLECTION DES 7 VALEURS → Technicien
+SOURCES D'ÉNERGIE → Bases
+SOUS-MODALITÉS (introduction) → Bases (Manuel Hexafor)
+SOUS-MODALITÉS (approfondissement technique) → Technicien
+SPECTRES ÉMOTIONNEL / ÉCHELLE DES EI → Bases
+STRATEX (histoires à succès) → MP Module III
+SWISH → Technicien
+SWISH PLUS → MP Module III
+SYNCHRONISATION → Bases
+TRAITEMENT DES ALLERGIES → Praticien
+TRIS PRIMAIRES → Bases (Manuel Hexafor)
+VALEURS ET COMPORTEMENTS → Technicien
+VALEURS DANS LE TEMPS (voyage passé) → Praticien
+VAKOG / CANAUX SENSORIELS → Bases (intro) + Technicien (prédicats)
+VOYAGE DANS LE TEMPS (10 ans) → Praticien
+3 BULLES (valeurs passé/présent) → Praticien

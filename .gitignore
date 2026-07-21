@@ -1,6 +1,8 @@
 base_vectorielle/
 textes_extraits/
+logs/
 __pycache__/
 *.pyc
 *.log
 .env
+.DS_Store

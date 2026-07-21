@@ -2,21 +2,26 @@
 Tagging sémantique — séquentiel, arrêt immédiat sur erreur crédit.
 """
 
-import os
 import json
+import os
+import sys
 import time
-import psycopg2
-import anthropic
 from pathlib import Path
+
+import anthropic
+import psycopg2
 from dotenv import load_dotenv
 
-load_dotenv()
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from pipeline.paths import LOGS_DIR, ROOT
 
-DB_URL = "postgresql://postgres:CG0xmL8kmikYT3tD@db.igdodyugqyeprtufohea.supabase.co:5432/postgres"
+load_dotenv(ROOT / ".env")
+
+DB_URL = os.getenv("SUPABASE_DB_URL", "")
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-PROGRESS_FILE = Path("/Users/danielmorel/tagging_progress.json")
+PROGRESS_FILE = LOGS_DIR / "tagging_progress.json"
 BATCH_SIZE = 20
-LOG_FILE = Path("/Users/danielmorel/tagging.log")
+LOG_FILE = LOGS_DIR / "tagging.log"
 
 SYSTEM_PROMPT = """Tu es un expert en PNL et Ennéagramme. Tu analyses des extraits de formations et tu assignes des tags précis.
 

@@ -1,13 +1,22 @@
 """
 Recherche dans Daniel Morel Éternel — via Supabase cloud
-Usage : python3 recherche_supabase.py "votre question" [nombre_resultats]
+Usage : python3 pipeline/search/recherche_supabase.py "votre question" [nombre_resultats]
 """
 
+import os
 import sys
+from pathlib import Path
+
 import psycopg2
+from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
 
-DB_URL = "postgresql://postgres:CG0xmL8kmikYT3tD@db.igdodyugqyeprtufohea.supabase.co:5432/postgres"
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from pipeline.paths import ROOT
+
+load_dotenv(ROOT / ".env")
+
+DB_URL = os.getenv("SUPABASE_DB_URL", "")
 MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 
 def rechercher(question, n=5):
