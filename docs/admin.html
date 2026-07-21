@@ -317,12 +317,14 @@
           },
           body: JSON.stringify({ question, nb_resultats: 5 })
         });
-        const data = await resp.json();
+        let data = null;
+        try { data = await resp.json(); } catch (_) {}
         supprimerThinking();
-        if (resp.ok) {
+        if (resp.ok && data && data.reponse) {
           ajouterMessage("daniel", data.reponse);
         } else {
-          ajouterMessage("daniel", "Erreur : " + (data.detail || resp.status));
+          const detail = (data && data.detail) ? data.detail : ("Erreur serveur " + resp.status);
+          ajouterMessage("daniel", "Erreur : " + detail);
         }
       } catch (e) {
         supprimerThinking();
