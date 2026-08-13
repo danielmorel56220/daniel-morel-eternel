@@ -4,6 +4,7 @@ Lancement : uvicorn app.api:app --host 0.0.0.0 --port $PORT
 """
 
 import os
+import re
 from pathlib import Path
 
 import anthropic
@@ -42,7 +43,8 @@ ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
 # sauf si tu exposes Ollama via un tunnel.
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2").strip()
-# auto | ollama | anthropic
+# auto | ollama | anthropic | rag
+# rag = réponses nettoyées depuis la base uniquement (0 €, pour Railway sans crédits)
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto").strip().lower()
 
 app = FastAPI(title="Daniel Morel Éternel", version="1.0")
@@ -129,30 +131,150 @@ def _anthropic_indisponible(exc: Exception) -> bool:
     return any(m in low for m in marqueurs)
 
 
+_RE_TIMESTAMP_LINE = re.compile(
+    r"^\s*\d{1,2}:\d{2}(?::\d{2})?(?:[.,]\d+)?\s*$", re.MULTILINE
+)
+_RE_TIMESTAMP_PREFIX = re.compile(
+    r"^\s*\d{1,2}:\d{2}(?::\d{2})?(?:[.,]\d+)?\s+", re.MULTILINE
+)
+_RE_BRACKET_TIME = re.compile(
+    r"\[\s*\d+(?:[.,]\d+)?s?\s*(?:→|->|–|-)\s*\d+(?:[.,]\d+)?s?\s*\]"
+)
+_RE_SRT_INDEX = re.compile(r"^\s*\d+\s*$", re.MULTILINE)
+_RE_SPACES = re.compile(r"[ \t]+")
+_RE_NEWLINES = re.compile(r"\n{3,}")
+_RE_DIALOGUE_FAIBLE = re.compile(
+    r"^(il|elle|on|je|tu|nous|vous)\s+dit\b|^ben\b|^euh\b",
+    re.IGNORECASE,
+)
+_MOTS_VIDES = {
+    "les", "des", "une", "un", "le", "la", "de", "du", "et", "en", "au", "aux",
+    "que", "qui", "quoi", "dont", "est", "sont", "pour", "pas", "plus", "avec",
+    "dans", "sur", "par", "ce", "ces", "cet", "cette", "il", "elle", "on", "nous",
+    "vous", "ils", "elles", "a", "à", "d", "l", "y", "ne", "se", "sa", "son",
+    "ses", "mon", "ton", "ma", "ta", "mes", "tes", "notre", "votre", "leurs",
+    "ou", "où", "si", "comme", "mais", "donc", "alors", "très", "aussi",
+    "quels", "quelles", "quel", "quelle", "comment", "pourquoi", "quand",
+}
+
+
+def _nettoyer_extrait(texte: str) -> str:
+    """Enlève timestamps vidéo, indices SRT, espaces sales."""
+    if not texte:
+        return ""
+    t = texte.replace("\r\n", "\n").replace("\r", "\n")
+    t = _RE_TIMESTAMP_LINE.sub(" ", t)
+    t = _RE_TIMESTAMP_PREFIX.sub(" ", t)
+    t = _RE_BRACKET_TIME.sub(" ", t)
+    t = _RE_SRT_INDEX.sub(" ", t)
+    t = t.replace(">>", " ").replace("…", "...")
+    t = _RE_SPACES.sub(" ", t)
+    t = _RE_NEWLINES.sub("\n\n", t)
+    t = t.strip(" \n-–—:;")
+    # Couper un début tronqué du type "éussissent" / "uveau"
+    if t and t[0].islower() and " " in t[:40]:
+        t = t.split(" ", 1)[1]
+    return t.strip()
+
+
+def _mots_cles(question: str) -> set[str]:
+    mots = re.findall(r"[a-zàâäéèêëïîôùûüçœ-]{3,}", question.lower())
+    return {m for m in mots if m not in _MOTS_VIDES}
+
+
+def _decouper_phrases(texte: str) -> list[str]:
+    brut = re.split(r"(?<=[.!?…])\s+|\n+", texte)
+    phrases = []
+    for p in brut:
+        p = _RE_BRACKET_TIME.sub(" ", p)
+        p = p.strip(" \n\"'«»[]")
+        if len(p) < 50 or len(p) > 280:
+            continue
+        if re.search(r"\d{1,2}:\d{2}|\d+\.\d+s", p):
+            continue
+        if p[0].islower():
+            continue
+        if _RE_DIALOGUE_FAIBLE.search(p):
+            continue
+        if p.count(" ") < 6:
+            continue
+        phrases.append(p)
+    return phrases
+
+
+def _score_phrase(phrase: str, cles: set[str]) -> float:
+    pl = phrase.lower()
+    score = 0.0
+    hits = 0
+    for m in cles:
+        if re.search(rf"\b{re.escape(m)}\b", pl) or m in pl:
+            score += 1.2
+            hits += 1
+    if hits == 0:
+        return 0.0
+    if any(x in pl for x in ("parce que", "c'est", "cela permet", "alors", "donc", "quand on")):
+        score += 0.3
+    if "écoute" in pl or "ecoute" in pl:
+        score += 0.8
+    return score
+
+
+def _dedupliquer(phrases: list[str]) -> list[str]:
+    vues = []
+    out = []
+    for p in phrases:
+        cle = re.sub(r"\W+", "", p.lower())[:80]
+        if any(cle[:50] in v or v[:50] in cle for v in vues):
+            continue
+        vues.append(cle)
+        out.append(p)
+    return out
+
+
 def _reponse_secours(question: str, extraits: list) -> str:
-    """Réponse sans Claude : s'appuie uniquement sur les extraits de la base."""
+    """Réponse lisible sans Claude : synthétise les meilleurs passages nettoyés."""
     if not extraits:
         return (
             "Je suis là, mais je ne trouve pas d'extrait assez proche dans mes enseignements "
-            "pour cette question. Reformulez un peu (PNL, émotions, relation, décision…) "
+            "pour cette question. Reformulez un peu (écoute, relation, émotion, décision…) "
             "et je réessaierai."
         )
 
-    parties = []
-    for e in extraits[:4]:
-        texte = (e.get("contenu") or "").strip()
-        if len(texte) > 700:
-            texte = texte[:700].rsplit(" ", 1)[0] + "…"
-        source = (e.get("source") or "enseignement").strip()
-        parties.append(f"À partir de « {source} » :\n{texte}")
+    cles = _mots_cles(question)
+    candidates: list[tuple[float, str]] = []
+    for e in extraits[:8]:
+        texte = _nettoyer_extrait(e.get("contenu") or "")
+        if not texte:
+            continue
+        for phrase in _decouper_phrases(texte):
+            sc = _score_phrase(phrase, cles)
+            if sc >= 1.2:
+                candidates.append((sc, phrase))
 
-    corps = "\n\n".join(parties)
+    candidates.sort(key=lambda x: x[0], reverse=True)
+    meilleures = _dedupliquer([p for _, p in candidates])[:4]
+
+    if not meilleures:
+        # Dernier recours : 2 extraits courts nettoyés
+        bouts = []
+        for e in extraits[:2]:
+            t = _nettoyer_extrait(e.get("contenu") or "")
+            if t:
+                bouts.append(t[:280].rsplit(" ", 1)[0] + "…")
+        if not bouts:
+            return (
+                "Je trouve des éléments dans mes enseignements, mais trop bruités "
+                "(transcriptions brutes). Reposez la question avec un mot-clé plus précis."
+            )
+        meilleures = bouts
+
+    puces = "\n".join(f"• {p}" for p in meilleures)
     return (
-        f"Voici ce que je peux vous dire à partir de mes enseignements, "
-        f"en lien avec votre question (« {question.strip()} ») :\n\n"
-        f"{corps}\n\n"
-        "Si vous voulez aller plus loin, précisez une situation concrète "
-        "(relation, travail, décision, émotion) et nous continuerons."
+        f"Au sujet de « {question.strip()} », voici l’essentiel que j’en tire "
+        f"de mes enseignements :\n\n"
+        f"{puces}\n\n"
+        "Si vous voulez, donnez-moi une situation concrète (couple, travail, famille) "
+        "et on l’applique ensemble."
     )
 
 
@@ -214,6 +336,10 @@ def _generer_reponse(
     client = None
     utiliser_anthropic = LLM_PROVIDER in ("auto", "anthropic") and bool(ANTHROPIC_KEY)
     utiliser_ollama = LLM_PROVIDER in ("auto", "ollama")
+    # Mode Railway économique : pas d'appel Claude (évite l'erreur crédits à chaque question)
+    if LLM_PROVIDER == "rag":
+        utiliser_anthropic = False
+        utiliser_ollama = False
 
     if utiliser_anthropic:
         client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
