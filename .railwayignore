@@ -1,0 +1,19 @@
+# Ne pas uploader ces dossiers lourds (inutiles en production API)
+base_vectorielle/
+textes_extraits/
+sources_externes/
+labs/
+logs/
+data/
+pipeline/
+scripts/
+.git/
+.railway-cli
+__pycache__/
+*.pyc
+*.log
+.env
+.DS_Store
+*.md
+docs/
+AGENTS.md
