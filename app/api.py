@@ -27,8 +27,14 @@ FRONTEND_DIR = ROOT / "frontend"
 load_dotenv(ROOT / ".env")
 
 SUPABASE_URL = os.getenv("SUPABASE_URL", "https://igdodyugqyeprtufohea.supabase.co")
+# Côté serveur : préférer la clé secret (lit la base malgré RLS).
+# La clé publishable seule ne voit rien si RLS est actif sans policy.
 SUPABASE_KEY = (
-    os.getenv("SUPABASE_KEY") or os.getenv("SUPABASE_PUBLISHABLE_KEY") or ""
+    os.getenv("SUPABASE_KEY")
+    or os.getenv("SUPABASE_SECRET_KEY")
+    or os.getenv("SUPABASE_SERVICE_ROLE_KEY")
+    or os.getenv("SUPABASE_PUBLISHABLE_KEY")
+    or ""
 ).strip()
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "").strip()
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
@@ -77,25 +83,63 @@ def _headers_supabase() -> dict:
 
 def _rechercher_extraits(question: str, nb_resultats: int) -> list:
     embedding = [float(x) for x in next(iter(embedder.embed([question])))]
-    resp = http.post(
-        f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
-        headers=_headers_supabase(),
-        json={"query_embedding": embedding, "nb_resultats": nb_resultats},
-        timeout=15,
-    )
+    try:
+        resp = http.post(
+            f"{SUPABASE_URL}/rest/v1/rpc/recherche_documents",
+            headers=_headers_supabase(),
+            json={"query_embedding": embedding, "nb_resultats": nb_resultats},
+            timeout=15,
+        )
+    except http.exceptions.RequestException as e:
+        raise HTTPException(
+            status_code=502,
+            detail=(
+                "Impossible de joindre Supabase "
+                f"({SUPABASE_URL}). Vérifiez que le projet existe encore. "
+                f"Détail: {type(e).__name__}"
+            ),
+        ) from e
     if resp.status_code != 200:
         raise HTTPException(status_code=502, detail=f"Supabase: {resp.text}")
     return resp.json()
 
 
+def _erreur_anthropic(exc: Exception) -> HTTPException:
+    """Transforme une erreur Anthropic en message clair pour Daniel / le front."""
+    msg = str(exc)
+    low = msg.lower()
+    if (
+        "credit balance is too low" in low
+        or "purchase credits" in low
+        or "plans & billing" in low
+    ):
+        return HTTPException(
+            status_code=402,
+            detail=(
+                "Les crédits Anthropic (Claude) sont épuisés. "
+                "Rechargez sur https://console.anthropic.com/settings/billing "
+                "puis réessayez."
+            ),
+        )
+    if "authentication" in low or "invalid api key" in low or "401" in low:
+        return HTTPException(
+            status_code=503,
+            detail="Clé Anthropic invalide ou refusée. Vérifiez ANTHROPIC_API_KEY sur Railway.",
+        )
+    return HTTPException(status_code=502, detail=f"Erreur Anthropic: {type(exc).__name__}: {exc}")
+
+
 def reformuler_question(question: str, client: anthropic.Anthropic) -> str:
     """Reformule la question en termes PNL/Ennéagramme pour améliorer la recherche."""
-    msg = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=200,
-        system=PROMPT_REFORMULATION,
-        messages=[{"role": "user", "content": question}],
-    )
+    try:
+        msg = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=200,
+            system=PROMPT_REFORMULATION,
+            messages=[{"role": "user", "content": question}],
+        )
+    except Exception as e:
+        raise _erreur_anthropic(e) from e
     return msg.content[0].text.strip()
 
 
@@ -114,20 +158,23 @@ def _generer_reponse(
         f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
     )
 
-    message = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=2000,
-        system=system_prompt,
-        messages=[
-            {
-                "role": "user",
-                "content": (
-                    f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
-                    f"{contexte}\n\n---\n\nQuestion : {question}"
-                ),
-            }
-        ],
-    )
+    try:
+        message = client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=2000,
+            system=system_prompt,
+            messages=[
+                {
+                    "role": "user",
+                    "content": (
+                        f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
+                        f"{contexte}\n\n---\n\nQuestion : {question}"
+                    ),
+                }
+            ],
+        )
+    except Exception as e:
+        raise _erreur_anthropic(e) from e
     return ReponseChat(question=question, reponse=message.content[0].text)
 
 
@@ -189,7 +236,15 @@ def recherche(body: Question):
 def chat(body: Question):
     if not body.question.strip():
         raise HTTPException(status_code=400, detail="La question est vide.")
-    return _generer_reponse(body.question, PROMPT_DANIEL_PUBLIC)
+    try:
+        return _generer_reponse(body.question, PROMPT_DANIEL_PUBLIC)
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Erreur chat: {type(e).__name__}: {e}",
+        ) from e
 
 
 @app.post("/chat-admin", response_model=ReponseChat)

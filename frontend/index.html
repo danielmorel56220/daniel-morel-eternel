@@ -225,16 +225,23 @@
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ question, nb_resultats: 5 })
         });
-        const data = await resp.json();
+        const raw = await resp.text();
+        let data = {};
+        try { data = raw ? JSON.parse(raw) : {}; } catch (_) {}
         supprimerThinking();
         if (resp.ok) {
           ajouterMessage("daniel", data.reponse);
         } else {
-          ajouterMessage("daniel", "Désolé, une erreur est survenue : " + (data.detail || resp.status));
+          const detail = data.detail || raw || ("code " + resp.status);
+          ajouterMessage("daniel", "Désolé, une erreur est survenue : " + detail);
         }
       } catch (e) {
         supprimerThinking();
-        ajouterMessage("daniel", "Impossible de joindre le serveur. Veuillez réessayer.");
+        ajouterMessage(
+          "daniel",
+          "Impossible de joindre le serveur. Vérifiez votre connexion, puis réessayez. "
+          + "Si le problème continue : crédits Anthropic ou Railway."
+        );
       }
 
       btn.disabled = false;

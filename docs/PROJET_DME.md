@@ -88,12 +88,21 @@ ANTHROPIC_API_KEY=...
 ADMIN_PASSWORD=...
 ```
 
-### Liens utiles
+### Liens utiles (accès chat)
+
+> Fiche dédiée, plus claire : **[LIENS_ACCES.md](LIENS_ACCES.md)**
+
+| Usage | Adresse |
+|---|---|
+| **Public** (clients) | https://daniel-morel-eternel-production.up.railway.app/chat-public |
+| **Propriétaires** (mot de passe) | https://daniel-morel-eternel-production.up.railway.app/admin |
+
+Mot de passe admin = variable **`ADMIN_PASSWORD`** (Railway Variables / `.env` local).  
+Ne jamais le coller dans ce fichier ni le committer.
+
 ```
 Supabase dashboard : https://supabase.com → projet igdodyugqyeprtufohea
 Railway production : https://daniel-morel-eternel-production.up.railway.app
-  Chat public      : /chat-public
-  Admin            : /admin
 Anthropic console  : https://console.anthropic.com
 ```
 
