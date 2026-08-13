@@ -8,6 +8,7 @@
 - Public : https://daniel-morel-eternel-production.up.railway.app/chat-public
 - Propriétaires (mdp) : https://daniel-morel-eternel-production.up.railway.app/admin  
   → mot de passe = `ADMIN_PASSWORD` (Railway / `.env`, jamais dans Git)
+- IA locale gratuite : `docs/OLLAMA.md` + `scripts/demarrer_local_ollama.sh`
 
 ## Source of truth
 - Runtime API : `app/`

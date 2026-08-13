@@ -38,6 +38,12 @@ SUPABASE_KEY = (
 ).strip()
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "").strip()
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
+# IA locale gratuite (Ollama). Ex. http://127.0.0.1:11434 — inutilisable depuis Railway
+# sauf si tu exposes Ollama via un tunnel.
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2").strip()
+# auto | ollama | anthropic
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto").strip().lower()
 
 app = FastAPI(title="Daniel Morel Éternel", version="1.0")
 
@@ -150,6 +156,38 @@ def _reponse_secours(question: str, extraits: list) -> str:
     )
 
 
+def _ollama_disponible() -> bool:
+    try:
+        r = http.get(f"{OLLAMA_BASE_URL}/api/tags", timeout=2)
+        return r.status_code == 200
+    except Exception:
+        return False
+
+
+def _appeler_ollama(system_prompt: str, user_content: str, max_tokens: int = 2000) -> str:
+    """Appelle Ollama (API locale compatible /api/chat)."""
+    resp = http.post(
+        f"{OLLAMA_BASE_URL}/api/chat",
+        json={
+            "model": OLLAMA_MODEL,
+            "stream": False,
+            "options": {"num_predict": max_tokens},
+            "messages": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content},
+            ],
+        },
+        timeout=120,
+    )
+    if resp.status_code != 200:
+        raise RuntimeError(f"Ollama HTTP {resp.status_code}: {resp.text[:300]}")
+    data = resp.json()
+    texte = (data.get("message") or {}).get("content") or data.get("response") or ""
+    if not texte.strip():
+        raise RuntimeError("Ollama a renvoyé une réponse vide.")
+    return texte.strip()
+
+
 def reformuler_question(question: str, client: anthropic.Anthropic):
     """Reformule la question. Retourne None si Claude est indisponible."""
     try:
@@ -174,7 +212,10 @@ def _generer_reponse(
 
     question_recherche = question
     client = None
-    if ANTHROPIC_KEY:
+    utiliser_anthropic = LLM_PROVIDER in ("auto", "anthropic") and bool(ANTHROPIC_KEY)
+    utiliser_ollama = LLM_PROVIDER in ("auto", "ollama")
+
+    if utiliser_anthropic:
         client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
         reformulee = reformuler_question(question, client)
         if reformulee:
@@ -188,22 +229,19 @@ def _generer_reponse(
     contexte = "\n\n---\n\n".join(
         f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
     )
+    user_content = (
+        f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
+        f"{contexte}\n\n---\n\nQuestion : {question}"
+    )
 
-    if client is not None:
+    # 1) Claude (si demandé et possible)
+    if client is not None and LLM_PROVIDER != "ollama":
         try:
             message = client.messages.create(
                 model="claude-sonnet-4-6",
                 max_tokens=2000,
                 system=system_prompt,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": (
-                            f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
-                            f"{contexte}\n\n---\n\nQuestion : {question}"
-                        ),
-                    }
-                ],
+                messages=[{"role": "user", "content": user_content}],
             )
             return ReponseChat(question=question, reponse=message.content[0].text)
         except Exception as e:
@@ -212,8 +250,17 @@ def _generer_reponse(
                     status_code=502,
                     detail=f"Erreur Anthropic: {type(e).__name__}: {e}",
                 ) from e
-            # Crédits / auth : secours RAG (le chat reste utilisable)
+            # Crédits / auth → on tente Ollama puis secours RAG
 
+    # 2) Ollama local (gratuit)
+    if utiliser_ollama and _ollama_disponible():
+        try:
+            texte = _appeler_ollama(system_prompt, user_content)
+            return ReponseChat(question=question, reponse=texte)
+        except Exception:
+            pass  # tombe sur le secours RAG
+
+    # 3) Secours : extraits bruts
     return ReponseChat(question=question, reponse=_reponse_secours(question, extraits))
 
 
@@ -231,6 +278,10 @@ def sante():
         "supabase_url": SUPABASE_URL,
         "supabase_cle_presente": bool(SUPABASE_KEY),
         "supabase_cle_prefixe": (SUPABASE_KEY[:12] + "…") if SUPABASE_KEY else "",
+        "llm_provider": LLM_PROVIDER,
+        "ollama_url": OLLAMA_BASE_URL,
+        "ollama_model": OLLAMA_MODEL,
+        "ollama_disponible": _ollama_disponible(),
     }
 
 

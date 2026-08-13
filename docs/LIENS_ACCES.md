@@ -43,7 +43,14 @@ Railway → projet DME → **Variables** → `ADMIN_PASSWORD`
 
 ---
 
-## 3. Si le chat ne répond pas
+## 3. IA locale gratuite (Ollama)
+
+Voir **[OLLAMA.md](OLLAMA.md)**.
+
+- Sur le **Mac** : chat avec IA locale (0 € API) via `scripts/demarrer_local_ollama.sh`
+- Sur **Railway** (lien public) : Ollama du Mac n’est pas visible → mode extraits / secours
+
+## 4. Si le chat ne répond pas
 
 Ordre de vérif rapide :
 
@@ -52,7 +59,7 @@ Ordre de vérif rapide :
 2. **Supabase** actif (pas « en pause ») → dashboard projet `igdodyugqyeprtufohea`
 3. **Santé API** → https://daniel-morel-eternel-production.up.railway.app/sante
 
-## 4. Autres liens techniques
+## 5. Autres liens techniques
 
 | Service | Lien |
 |---|---|
