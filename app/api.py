@@ -104,33 +104,54 @@ def _rechercher_extraits(question: str, nb_resultats: int) -> list:
     return resp.json()
 
 
-def _erreur_anthropic(exc: Exception) -> HTTPException:
-    """Transforme une erreur Anthropic en message clair pour Daniel / le front."""
-    msg = str(exc)
-    low = msg.lower()
-    if (
-        "credit balance is too low" in low
-        or "purchase credits" in low
-        or "plans & billing" in low
-    ):
-        return HTTPException(
-            status_code=402,
-            detail=(
-                "Les crédits Anthropic (Claude) sont épuisés. "
-                "Rechargez sur https://console.anthropic.com/settings/billing "
-                "puis réessayez."
-            ),
-        )
-    if "authentication" in low or "invalid api key" in low or "401" in low:
-        return HTTPException(
-            status_code=503,
-            detail="Clé Anthropic invalide ou refusée. Vérifiez ANTHROPIC_API_KEY sur Railway.",
-        )
-    return HTTPException(status_code=502, detail=f"Erreur Anthropic: {type(exc).__name__}: {exc}")
+def _anthropic_indisponible(exc: Exception) -> bool:
+    """True si Claude est injoignable (crédits, auth, quota) — on bascule en secours."""
+    low = str(exc).lower()
+    marqueurs = (
+        "credit balance is too low",
+        "purchase credits",
+        "plans & billing",
+        "authentication",
+        "invalid api key",
+        "rate_limit",
+        "overloaded",
+        "529",
+        "401",
+        "402",
+        "403",
+    )
+    return any(m in low for m in marqueurs)
 
 
-def reformuler_question(question: str, client: anthropic.Anthropic) -> str:
-    """Reformule la question en termes PNL/Ennéagramme pour améliorer la recherche."""
+def _reponse_secours(question: str, extraits: list) -> str:
+    """Réponse sans Claude : s'appuie uniquement sur les extraits de la base."""
+    if not extraits:
+        return (
+            "Je suis là, mais je ne trouve pas d'extrait assez proche dans mes enseignements "
+            "pour cette question. Reformulez un peu (PNL, émotions, relation, décision…) "
+            "et je réessaierai."
+        )
+
+    parties = []
+    for e in extraits[:4]:
+        texte = (e.get("contenu") or "").strip()
+        if len(texte) > 700:
+            texte = texte[:700].rsplit(" ", 1)[0] + "…"
+        source = (e.get("source") or "enseignement").strip()
+        parties.append(f"À partir de « {source} » :\n{texte}")
+
+    corps = "\n\n".join(parties)
+    return (
+        f"Voici ce que je peux vous dire à partir de mes enseignements, "
+        f"en lien avec votre question (« {question.strip()} ») :\n\n"
+        f"{corps}\n\n"
+        "Si vous voulez aller plus loin, précisez une situation concrète "
+        "(relation, travail, décision, émotion) et nous continuerons."
+    )
+
+
+def reformuler_question(question: str, client: anthropic.Anthropic):
+    """Reformule la question. Retourne None si Claude est indisponible."""
     try:
         msg = client.messages.create(
             model="claude-haiku-4-5-20251001",
@@ -138,44 +159,62 @@ def reformuler_question(question: str, client: anthropic.Anthropic) -> str:
             system=PROMPT_REFORMULATION,
             messages=[{"role": "user", "content": question}],
         )
+        return msg.content[0].text.strip()
     except Exception as e:
-        raise _erreur_anthropic(e) from e
-    return msg.content[0].text.strip()
+        if _anthropic_indisponible(e):
+            return None
+        raise
 
 
 def _generer_reponse(
     question: str, system_prompt: str, nb_resultats: int = 8
 ) -> ReponseChat:
-    if not ANTHROPIC_KEY:
-        raise HTTPException(status_code=503, detail="Clé Anthropic manquante.")
     if not SUPABASE_KEY:
         raise HTTPException(status_code=503, detail="Clé Supabase manquante.")
 
-    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
-    question_enrichie = reformuler_question(question, client)
-    extraits = _rechercher_extraits(question_enrichie, nb_resultats)
+    question_recherche = question
+    client = None
+    if ANTHROPIC_KEY:
+        client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+        reformulee = reformuler_question(question, client)
+        if reformulee:
+            question_recherche = reformulee
+
+    extraits = _rechercher_extraits(question_recherche, nb_resultats)
+    # Si la reformulation a donné 0 résultat, retenter avec la question brute
+    if not extraits and question_recherche != question:
+        extraits = _rechercher_extraits(question, nb_resultats)
+
     contexte = "\n\n---\n\n".join(
         f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
     )
 
-    try:
-        message = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=2000,
-            system=system_prompt,
-            messages=[
-                {
-                    "role": "user",
-                    "content": (
-                        f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
-                        f"{contexte}\n\n---\n\nQuestion : {question}"
-                    ),
-                }
-            ],
-        )
-    except Exception as e:
-        raise _erreur_anthropic(e) from e
-    return ReponseChat(question=question, reponse=message.content[0].text)
+    if client is not None:
+        try:
+            message = client.messages.create(
+                model="claude-sonnet-4-6",
+                max_tokens=2000,
+                system=system_prompt,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": (
+                            f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
+                            f"{contexte}\n\n---\n\nQuestion : {question}"
+                        ),
+                    }
+                ],
+            )
+            return ReponseChat(question=question, reponse=message.content[0].text)
+        except Exception as e:
+            if not _anthropic_indisponible(e):
+                raise HTTPException(
+                    status_code=502,
+                    detail=f"Erreur Anthropic: {type(e).__name__}: {e}",
+                ) from e
+            # Crédits / auth : secours RAG (le chat reste utilisable)
+
+    return ReponseChat(question=question, reponse=_reponse_secours(question, extraits))
 
 
 @app.get("/")

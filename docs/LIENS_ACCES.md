@@ -62,4 +62,4 @@ Ordre de vérif rapide :
 
 ---
 
-*Dernière mise à jour : 13 août 2026*
+*Dernière mise à jour : 13 août 2026 — déploiement Railway OK ; chat bloqué uniquement si crédits Anthropic = 0.*
