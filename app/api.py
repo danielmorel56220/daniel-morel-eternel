@@ -152,6 +152,35 @@ def _requete_recherche_gratuit(question: str) -> str:
     return " ".join(actifs)
 
 
+def _besoin_recherche_ancrage(question: str) -> bool:
+    q = question.lower()
+    themes = (
+        "ancrage",
+        "panique",
+        "peur",
+        "parole",
+        "réunion",
+        "anxiété",
+        "stress",
+    )
+    if not any(t in q for t in themes):
+        return False
+    return (
+        "client" in q
+        or "étape" in q
+        or "etape" in q
+        or "proposer" in q
+        or "protocole" in q
+    )
+
+
+def _requete_ancrage_ciblee() -> str:
+    return (
+        "Transcription Les ancrages auto-ancrage cinq étapes état ressource "
+        "kinesthésique peur prise de parole"
+    )
+
+
 def _anthropic_indisponible(exc: Exception) -> bool:
     """True si Claude est injoignable (crédits, auth, quota) — on bascule en secours."""
     low = str(exc).lower()
@@ -397,10 +426,22 @@ def _generer_reponse(
             extraits = _fusionner_extraits(
                 extraits, _rechercher_extraits(req_courte, nb_resultats)
             )
+    if _besoin_recherche_ancrage(question):
+        extraits = _fusionner_extraits(
+            extraits,
+            _rechercher_extraits(_requete_ancrage_ciblee(), nb_resultats),
+        )
+        extraits.sort(
+            key=lambda e: (
+                0 if "ancrage" in (e.get("source") or "").lower() else 1,
+                0 if "ancrage" in (e.get("contenu") or "").lower()[:200] else 1,
+            )
+        )
 
+    nb_extraits_ctx = 8 if _besoin_recherche_ancrage(question) else 6
     # Contexte propre pour les LLM (pas les timestamps bruts)
     extraits_propres = []
-    for e in extraits[:6]:
+    for e in extraits[:nb_extraits_ctx]:
         t = _nettoyer_extrait(e.get("contenu") or "")
         if t:
             if len(t) > 500:
@@ -448,8 +489,9 @@ def _generer_reponse(
         "RÈGLES STRICTES (prioritaires):\n"
         "- Réponds UNIQUEMENT à partir des EXTRAITS ci-dessous (base DME). N'invente aucun fait, "
         "aucune citation, aucune référence à des notes ou fichiers.\n"
-        "- Ne dis jamais « les extraits que vous avez fournis/partagés » : le praticien "
-        "n'a rien collé ; parle de « ce que j'ai dans ma base » ou « d'après les extraits ci-dessous ».\n"
+        "- Ne dis jamais « extraits ci-dessous », « extraits fournis/partagés » : le praticien "
+        "ne voit pas les extraits. Dis « d'après ma base DME » ou entre directement dans le contenu.\n"
+        "- Étapes PNL : max 2 phrases par étape ; ancrage/recadrage uniquement si présent dans les EXTRAITS.\n"
         "- Tutoiement au praticien (coach), français impeccable (pas « voter » pour « voir »).\n"
         "- Guillemets « » : uniquement pour des questions à poser au client, ou pour une "
         "phrase présente mot pour mot dans les EXTRAITS.\n"
