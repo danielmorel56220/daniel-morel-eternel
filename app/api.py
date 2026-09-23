@@ -114,6 +114,44 @@ def _rechercher_extraits(question: str, nb_resultats: int) -> list:
     return resp.json()
 
 
+def _fusionner_extraits(primary: list, secondary: list) -> list:
+    seen: set[tuple] = set()
+    fusion: list = []
+    for e in primary + secondary:
+        cle = (e.get("source"), (e.get("contenu") or "")[:96])
+        if cle in seen:
+            continue
+        seen.add(cle)
+        fusion.append(e)
+    return fusion
+
+
+def _requete_recherche_gratuit(question: str) -> str:
+    """Requête courte pour la recherche vectorielle (sans reformulation Haiku)."""
+    q = question.lower()
+    morceaux = [
+        "pnl",
+        "ancrage",
+        "état ressource",
+        "recadrage",
+        "peur",
+        "anxiété",
+        "prise de parole",
+        "réunion",
+        "dissociation",
+        "visualisation",
+    ]
+    actifs = [m for m in morceaux if m.replace(" ", "") in q.replace(" ", "") or m in q]
+    if "panique" in q:
+        actifs.extend(["peur", "ancrage", "état ressource"])
+    if "client" in q and ("étape" in q or "proposer" in q or "protocole" in q):
+        actifs.extend(["ancrage", "recadrage", "séance"])
+    actifs = list(dict.fromkeys(actifs))
+    if not actifs:
+        return question[:400]
+    return " ".join(actifs)
+
+
 def _anthropic_indisponible(exc: Exception) -> bool:
     """True si Claude est injoignable (crédits, auth, quota) — on bascule en secours."""
     low = str(exc).lower()
@@ -353,6 +391,12 @@ def _generer_reponse(
     extraits = _rechercher_extraits(question_recherche, nb_resultats)
     if not extraits and question_recherche != question:
         extraits = _rechercher_extraits(question, nb_resultats)
+    if utiliser_free and not utiliser_anthropic:
+        req_courte = _requete_recherche_gratuit(question)
+        if req_courte.strip() and req_courte != question_recherche:
+            extraits = _fusionner_extraits(
+                extraits, _rechercher_extraits(req_courte, nb_resultats)
+            )
 
     # Contexte propre pour les LLM (pas les timestamps bruts)
     extraits_propres = []
@@ -364,9 +408,23 @@ def _generer_reponse(
             extraits_propres.append(f"[Source: {e.get('source', '')}]\n{t}")
     contexte = "\n\n---\n\n".join(extraits_propres)
     q_lower = question.lower()
-    mode_outil_praticien = (
-        ("métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower)
-        and ("client" in q_lower or "à poser" in q_lower or "demander" in q_lower)
+    demande_metamodele = "métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower
+    demande_client = (
+        "client" in q_lower
+        or "à poser" in q_lower
+        or "demander" in q_lower
+        or "mon client" in q_lower
+        or "un client" in q_lower
+    )
+    demande_etapes = (
+        "étape" in q_lower
+        or "etape" in q_lower
+        or "protocole" in q_lower
+        or "dans l'ordre" in q_lower
+        or "proposer" in q_lower
+    )
+    mode_outil_praticien = (demande_metamodele and demande_client) or (
+        demande_client and demande_etapes
     )
     system_effectif = PROMPT_OUTIL_PRATICIEN if mode_outil_praticien else system_prompt
 
@@ -388,8 +446,11 @@ def _generer_reponse(
         )
     user_content = (
         "RÈGLES STRICTES (prioritaires):\n"
-        "- Réponds UNIQUEMENT à partir des EXTRAITS ci-dessous. N'invente aucun fait, "
+        "- Réponds UNIQUEMENT à partir des EXTRAITS ci-dessous (base DME). N'invente aucun fait, "
         "aucune citation, aucune référence à des notes ou fichiers.\n"
+        "- Ne dis jamais « les extraits que vous avez fournis/partagés » : le praticien "
+        "n'a rien collé ; parle de « ce que j'ai dans ma base » ou « d'après les extraits ci-dessous ».\n"
+        "- Tutoiement au praticien (coach), français impeccable (pas « voter » pour « voir »).\n"
         "- Guillemets « » : uniquement pour des questions à poser au client, ou pour une "
         "phrase présente mot pour mot dans les EXTRAITS.\n"
         "- Longueur : environ 120 à 280 mots (sauf demande explicite de développer).\n"
