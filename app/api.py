@@ -366,9 +366,9 @@ def _generer_reponse(
     consigne_metamodele = ""
     if "métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower:
         consigne_metamodele = (
-            "Cette question porte sur le MÉTAMODÈLE : intro brève, puis 3 questions "
-            "courtes au client (guillemets « »), une par violation linguistique repérable "
-            "dans l'énoncé du client. Pas de théorie longue.\n"
+            "Cette question porte sur le MÉTAMODÈLE : tu DOIS répondre (ne refuse pas). "
+            "Intro brève, puis 3 questions courtes au client (guillemets « »), une par "
+            "violation linguistique repérable dans l'énoncé du client. Pas de théorie longue.\n"
         )
     user_content = (
         "RÈGLES STRICTES (prioritaires):\n"
