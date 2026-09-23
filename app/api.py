@@ -20,6 +20,7 @@ from app.llm_free import generer_gratuit
 from app.prompts import (
     PROMPT_DANIEL_ADMIN,
     PROMPT_DANIEL_PUBLIC,
+    PROMPT_OUTIL_PRATICIEN,
     PROMPT_REFORMULATION,
 )
 
@@ -363,6 +364,12 @@ def _generer_reponse(
             extraits_propres.append(f"[Source: {e.get('source', '')}]\n{t}")
     contexte = "\n\n---\n\n".join(extraits_propres)
     q_lower = question.lower()
+    mode_outil_praticien = (
+        ("métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower)
+        and ("client" in q_lower or "à poser" in q_lower or "demander" in q_lower)
+    )
+    system_effectif = PROMPT_OUTIL_PRATICIEN if mode_outil_praticien else system_prompt
+
     consigne_metamodele = ""
     if "métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower:
         consigne_praticien = ""
@@ -397,7 +404,7 @@ def _generer_reponse(
             message = client.messages.create(
                 model="claude-sonnet-4-6",
                 max_tokens=2000,
-                system=system_prompt,
+                system=system_effectif,
                 messages=[{"role": "user", "content": user_content}],
             )
             return ReponseChat(question=question, reponse=message.content[0].text)
@@ -410,14 +417,14 @@ def _generer_reponse(
 
     # 2) LLM gratuits (Groq/Gemini/OVH/Pollinations)
     if utiliser_free:
-        texte, _fournisseur = generer_gratuit(system_prompt, user_content)
+        texte, _fournisseur = generer_gratuit(system_effectif, user_content)
         if texte:
             return ReponseChat(question=question, reponse=texte)
 
     # 3) Ollama local
     if utiliser_ollama and _ollama_disponible():
         try:
-            texte = _appeler_ollama(system_prompt, user_content)
+            texte = _appeler_ollama(system_effectif, user_content)
             return ReponseChat(question=question, reponse=texte)
         except Exception:
             pass
