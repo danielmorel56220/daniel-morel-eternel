@@ -16,6 +16,7 @@ from fastapi.responses import FileResponse
 from fastembed import TextEmbedding
 from pydantic import BaseModel
 
+from app.llm_free import generer_gratuit
 from app.prompts import (
     PROMPT_DANIEL_ADMIN,
     PROMPT_DANIEL_PUBLIC,
@@ -43,9 +44,9 @@ ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "")
 # sauf si tu exposes Ollama via un tunnel.
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://127.0.0.1:11434").rstrip("/")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.2").strip()
-# auto | ollama | anthropic | rag
-# rag = réponses nettoyées depuis la base uniquement (0 €, pour Railway sans crédits)
-LLM_PROVIDER = os.getenv("LLM_PROVIDER", "auto").strip().lower()
+# auto | free | ollama | anthropic | rag
+# free = Groq/Gemini (si clés) → OVH UE anonyme → Pollinations → Ollama → RAG
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "free").strip().lower()
 
 app = FastAPI(title="Daniel Morel Éternel", version="1.0")
 
@@ -335,10 +336,11 @@ def _generer_reponse(
     question_recherche = question
     client = None
     utiliser_anthropic = LLM_PROVIDER in ("auto", "anthropic") and bool(ANTHROPIC_KEY)
-    utiliser_ollama = LLM_PROVIDER in ("auto", "ollama")
-    # Mode Railway économique : pas d'appel Claude (évite l'erreur crédits à chaque question)
+    utiliser_free = LLM_PROVIDER in ("auto", "free")
+    utiliser_ollama = LLM_PROVIDER in ("auto", "free", "ollama")
     if LLM_PROVIDER == "rag":
         utiliser_anthropic = False
+        utiliser_free = False
         utiliser_ollama = False
 
     if utiliser_anthropic:
@@ -348,20 +350,40 @@ def _generer_reponse(
             question_recherche = reformulee
 
     extraits = _rechercher_extraits(question_recherche, nb_resultats)
-    # Si la reformulation a donné 0 résultat, retenter avec la question brute
     if not extraits and question_recherche != question:
         extraits = _rechercher_extraits(question, nb_resultats)
 
-    contexte = "\n\n---\n\n".join(
-        f"[Source: {e['source']}]\n{e['contenu']}" for e in extraits
-    )
+    # Contexte propre pour les LLM (pas les timestamps bruts)
+    extraits_propres = []
+    for e in extraits[:6]:
+        t = _nettoyer_extrait(e.get("contenu") or "")
+        if t:
+            if len(t) > 500:
+                t = t[:500].rsplit(" ", 1)[0] + "…"
+            extraits_propres.append(f"[Source: {e.get('source', '')}]\n{t}")
+    contexte = "\n\n---\n\n".join(extraits_propres)
+    q_lower = question.lower()
+    consigne_metamodele = ""
+    if "métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower:
+        consigne_metamodele = (
+            "Cette question porte sur le MÉTAMODÈLE : intro brève, puis 3 questions "
+            "courtes au client (guillemets « »), une par violation linguistique repérable "
+            "dans l'énoncé du client. Pas de théorie longue.\n"
+        )
     user_content = (
-        f"Voici des extraits de mes travaux pertinents pour ta question :\n\n"
-        f"{contexte}\n\n---\n\nQuestion : {question}"
+        "RÈGLES STRICTES (prioritaires):\n"
+        "- Réponds UNIQUEMENT à partir des EXTRAITS ci-dessous. N'invente aucun fait, "
+        "aucune citation, aucune référence à des notes ou fichiers.\n"
+        "- Guillemets « » : uniquement pour des questions à poser au client, ou pour une "
+        "phrase présente mot pour mot dans les EXTRAITS.\n"
+        "- Longueur : environ 120 à 280 mots (sauf demande explicite de développer).\n"
+        "- Français correct, phrases claires, pas de style littéraire ni de remplissage.\n"
+        f"{consigne_metamodele}\n"
+        f"EXTRAITS:\n{contexte}\n\n---\n\nQUESTION: {question}"
     )
 
-    # 1) Claude (si demandé et possible)
-    if client is not None and LLM_PROVIDER != "ollama":
+    # 1) Claude (optionnel / payant)
+    if client is not None and LLM_PROVIDER in ("auto", "anthropic"):
         try:
             message = client.messages.create(
                 model="claude-sonnet-4-6",
@@ -376,17 +398,22 @@ def _generer_reponse(
                     status_code=502,
                     detail=f"Erreur Anthropic: {type(e).__name__}: {e}",
                 ) from e
-            # Crédits / auth → on tente Ollama puis secours RAG
 
-    # 2) Ollama local (gratuit)
+    # 2) LLM gratuits (Groq/Gemini/OVH/Pollinations)
+    if utiliser_free:
+        texte, _fournisseur = generer_gratuit(system_prompt, user_content)
+        if texte:
+            return ReponseChat(question=question, reponse=texte)
+
+    # 3) Ollama local
     if utiliser_ollama and _ollama_disponible():
         try:
             texte = _appeler_ollama(system_prompt, user_content)
             return ReponseChat(question=question, reponse=texte)
         except Exception:
-            pass  # tombe sur le secours RAG
+            pass
 
-    # 3) Secours : extraits bruts
+    # 4) Secours extractif nettoyé
     return ReponseChat(question=question, reponse=_reponse_secours(question, extraits))
 
 
@@ -408,6 +435,10 @@ def sante():
         "ollama_url": OLLAMA_BASE_URL,
         "ollama_model": OLLAMA_MODEL,
         "ollama_disponible": _ollama_disponible(),
+        "groq_cle_presente": bool(os.getenv("GROQ_API_KEY", "").strip()),
+        "gemini_cle_presente": bool(
+            (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or "").strip()
+        ),
     }
 
 
