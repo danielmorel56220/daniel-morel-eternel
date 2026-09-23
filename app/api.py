@@ -375,8 +375,9 @@ def _generer_reponse(
             "Cette question porte sur le MÉTAMODÈLE : tu DOIS répondre (ne refuse pas). "
             f"{consigne_praticien}"
             "Intro une phrase pour le praticien, puis 3 questions au client (guillemets « »), "
-            "numérotées, sans parenthèses explicatives, sans question finale au praticien. "
-            "Priorité : généralisations (personne, jamais, toujours, tout le monde).\n"
+            "numérotées, sans parenthèses ni phrase du type « Cette question permet ». "
+            "Sans question finale au praticien. Au moins une question sur « jamais » "
+            "et une sur « personne » si ces mots sont dans l'énoncé du client.\n"
         )
     user_content = (
         "RÈGLES STRICTES (prioritaires):\n"
