@@ -365,10 +365,18 @@ def _generer_reponse(
     q_lower = question.lower()
     consigne_metamodele = ""
     if "métamodèle" in q_lower or "metamodele" in q_lower or "meta modele" in q_lower:
+        consigne_praticien = ""
+        if "client" in q_lower or "à poser" in q_lower or "demander" in q_lower:
+            consigne_praticien = (
+                "L'interlocuteur est un PRATICIEN : ne lui parle pas comme s'il disait "
+                "« personne ne m'écoute ». Les 3 questions sont celles qu'il pose À SON CLIENT.\n"
+            )
         consigne_metamodele = (
             "Cette question porte sur le MÉTAMODÈLE : tu DOIS répondre (ne refuse pas). "
-            "Intro brève, puis 3 questions courtes au client (guillemets « »), une par "
-            "violation linguistique repérable dans l'énoncé du client. Pas de théorie longue.\n"
+            f"{consigne_praticien}"
+            "Intro une phrase pour le praticien, puis 3 questions au client (guillemets « »), "
+            "numérotées, sans parenthèses explicatives, sans question finale au praticien. "
+            "Priorité : généralisations (personne, jamais, toujours, tout le monde).\n"
         )
     user_content = (
         "RÈGLES STRICTES (prioritaires):\n"
